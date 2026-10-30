@@ -6,9 +6,11 @@ Faça uma cópia desta ficha para cada par **configuração/replicação**. Arma
 
 - ID: E__-R__
 - Data/hora e fuso: PENDENTE
-- Provedor/interface: PENDENTE
+- Provedor/interface (ChatGPT, Claude ou AI Studio/API): PENDENTE
 - Nome do modelo e versão exibida: PENDENTE
-- Esforço selecionado: PENDENTE
+- Esforço selecionado (nome literal na plataforma): PENDENTE
+- Esforço configurável e evidência: PENDENTE
+- Substituição de versão e justificativa, quando necessária: PENDENTE
 - Versão do software/interface, se disponível: PENDENTE
 - Recursos permitidos (navegação, repositório, arquivos, anexos): PENDENTE
 - SHA/commit do artefato consultado: PENDENTE
