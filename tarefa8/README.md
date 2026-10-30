@@ -1,7 +1,7 @@
 # Tarefa 8 — Robustez e sensibilidade da avaliação de artefatos com LLMs
 
 **Disciplina:** Avaliação de Artefatos de Software  
-**Status:** protocolo preparado e auditoria documental independente concluída; parecer piloto disponível; **testes E01–E04 ainda não executados de modo controlado**  
+**Status:** protocolo preparado e auditoria documental independente concluída; parecer piloto disponível; **testes E01–E08 ainda não executados de modo controlado**  
 **Data de preparação:** 30/10/2026
 
 ## 1. Objetivo
@@ -31,20 +31,34 @@ Os resultados de GPT-4o, Claude 3.5 Sonnet e Gemini 1.5 Pro presentes na Tarefa 
 
 O termo **Parcial** foi utilizado como categoria didática; **não é um selo formal do CTA**.
 
-## 4. Novo desenho experimental (2 × 2)
+## 4. Desenho experimental com os três provedores (8 condições)
 
-O experimento combina **duas versões** (GPT-6 e GPT-5.6) e **dois esforços** (Médio e Alto). Esses níveis só devem ser registrados como usados quando selecionados efetivamente na interface. A disponibilidade de versões pode variar conforme a conta/plano.
+A Tarefa 7 incluiu resultados de referência para **GPT-4o (OpenAI), Claude 3.5 Sonnet (Anthropic) e Gemini 1.5 Pro (Google)**, além da avaliação registrada com GPT-6. Portanto, manter apenas modelos OpenAI seria insuficiente para o objetivo comparativo. A Tarefa 8 incorpora os **três provedores originais**, usando versões disponíveis em 2026.
 
-| ID | Provedor | Modelo | Esforço | Variável relativa |
+| ID | Provedor | Modelo proposto | Esforço alvo | Estado |
 |---|---|---|---|---|
-| E01 | OpenAI | GPT-6 | Médio | Referência interna das configurações T8 |
-| E02 | OpenAI | GPT-6 | Alto | Efeito do esforço, comparado a E01 |
-| E03 | OpenAI | GPT-5.6 | Médio | Efeito da versão, comparado a E01 |
-| E04 | OpenAI | GPT-5.6 | Alto | Versão diferente, com maior esforço |
+| E01 | OpenAI | GPT-6 | Médio | Pendente |
+| E02 | OpenAI | GPT-6 | Alto | Pendente |
+| E03 | OpenAI | GPT-5.6 | Médio | Pendente |
+| E04 | OpenAI | GPT-5.6 | Alto | Pendente |
+| E05 | Anthropic | Claude Sonnet 5 | Médio/equivalente disponível | Pendente |
+| E06 | Anthropic | Claude Sonnet 5 | Alto/máximo disponível | Pendente |
+| E07 | Google | Gemini 3.1 Pro | Médio/equivalente disponível | Pendente |
+| E08 | Google | Gemini 3.1 Pro | Alto/máximo disponível | Pendente |
 
-**Opcional, se disponível:** testar também o maior esforço oferecido à conta e registrar o nome exato; não declarar que foi usado se não aparecer na interface. Execuções com outros provedores (Claude, Gemini) só entram como resultados experimentais se forem realizadas, documentadas e mantiverem condições equivalentes.
+**Importante:** trata-se de um **plano**, não de resultados. Só declarar o modelo e o esforço efetivamente selecionados. Se não houver seleção de esforço na interface utilizada, registrar 'não configurável' e não afirmar que as condições médio/alto foram executadas. Se a versão proposta não estiver disponível, substituir por uma disponível do mesmo provedor, documentando nome, data e justificativa; não renomear a versão executada.
 
-**Ressalva de comparação:** o esforço da execução GPT-6 na Tarefa 7 não foi registrado. Logo, a comparação T7 × T8 tem uma variável de confusão quanto ao esforço. Os pares E01 × E02 e E03 × E04, por sua vez, têm contraste controlado de esforço dentro da Tarefa 8.
+As comparações de esforço devem ser **intramodelo** (E01 × E02; E03 × E04; E05 × E06; E07 × E08). A comparação de versão com esforço fixo é E01 × E03 e E02 × E04. Níveis chamados 'Alto' em provedores diferentes **não são necessariamente equivalentes**, e versões novas não isolam o efeito do esforço.
+
+### Continuidade e limitações da linha de base
+
+- **GPT-6 da T7:** avaliação própria registrada, porém com esforço desconhecido; comparação histórica descritiva, não causal.
+- **GPT-4o, Claude 3.5 Sonnet e Gemini 1.5 Pro da T7:** resultados transcritos do **gabarito de referência**, sem transcrição integral das execuções. Registrar como 'referência fornecida' e nunca como experimentos próprios.
+- **Claude Sonnet 3.5:** retirado da API em 2025, segundo a Anthropic; não é razoável exigir uma nova execução nessa versão em 2026.
+- **Gemini 1.5 Pro:** encerrado em 29/09/2025, segundo o Google.
+- O mesmo artefato, SHA, diretrizes oficiais, prompts, logs e condições de acesso à documentação devem ser mantidos. O efeito do provedor deve ser analisado separadamente do efeito de versão/esforço.
+
+Consulte [`MODELOS_PROVEDORES.md`](MODELOS_PROVEDORES.md) para disponibilidade, plataformas, instruções e limitações. Se o esforço máximo for denominado 'Extra Alto' ou outro nome na interface, registrar esse nome literal e, para contraste, documentar a condição de menor esforço.
 
 ## 5. Procedimento em cada execução
 
@@ -74,9 +88,9 @@ O experimento combina **duas versões** (GPT-6 e GPT-5.6) e **dois esforços** (
 
 O trabalho *Agente K-alibra: Estratégia para Seleção de K-Clientes em Aprendizado Federado autônoma* consta nos [resultados oficiais](https://doc-artefatos.github.io/sbrc2026/results.html) com **D, F, S e R**. Isso serve como **referência institucional**, não como prova de que a execução local e os logs apresentados deveriam necessariamente produzir o mesmo parecer.
 
-## 8. Conclusão parcial (a completar após executar E01–E04)
+## 8. Conclusão parcial (a completar após executar E01–E08)
 
-A auditoria das fontes e um parecer piloto desta sessão foram realizados. Entretanto, **ainda não é possível concluir** se elevar o esforço ou trocar a versão aumenta a consistência. A inferência dependerá das respostas integrais efetivamente obtidas, da auditoria das evidências e da comparação controlada. A Tarefa 7 oferece um ponto de partida, mas o seu nível de esforço desconhecido limita inferências causais sobre mudanças T7 × T8.
+A auditoria das fontes e um parecer piloto desta sessão foram realizados. As oito condições mult provedores foram planejadas, mas não executadas nesta sessão. Entretanto, **ainda não é possível concluir** se elevar o esforço ou trocar a versão aumenta a consistência. A inferência dependerá das respostas integrais efetivamente obtidas, da auditoria das evidências e da comparação controlada. A Tarefa 7 oferece um ponto de partida, mas o seu nível de esforço desconhecido limita inferências causais sobre mudanças T7 × T8.
 
 ## 9. Estrutura dos materiais
 
@@ -85,7 +99,8 @@ A auditoria das fontes e um parecer piloto desta sessão foram realizados. Entre
 - [`TABELA_COMPARATIVA.md`](TABELA_COMPARATIVA.md) — comparação T7 e T8, sem resultados fabricados;
 - [`FLUXOGRAMA.md`](FLUXOGRAMA.md) — protocolo experimental atualizado;
 - [`AUDITORIA_FONTES.md`](AUDITORIA_FONTES.md) — verificação das evidências no commit consultado do artefato;
-- [`PARECER_PILOTO.md`](PARECER_PILOTO.md) — parecer exploratório desta sessão, não contado como teste E01–E04.
+- [`PARECER_PILOTO.md`](PARECER_PILOTO.md) — parecer exploratório desta sessão, não contado como teste E01–E08.
+- [`MODELOS_PROVEDORES.md`](MODELOS_PROVEDORES.md) — orientação para executar Claude e Gemini, com disponibilidade e controle experimental.
 
 ### Fontes
 
