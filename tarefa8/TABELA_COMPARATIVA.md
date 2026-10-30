@@ -4,15 +4,26 @@
 
 ## 1. Selos por condição
 
-| Origem | Execução | Modelo | Esforço | Etapa 1 — F | Etapa 1 — R | Etapa 2 — F | Etapa 2 — R | Evidências auditadas |
-|---|---|---|---|---|---|---|---|---|
-| T7 | Baseline documentado | GPT-6 | Não registrado | Atribuído preliminarmente | Parcial | Parcial | Não Atribuído | README, configuração e logs do enunciado |
-| T8 | E01 | GPT-6 | Médio | **Pendente** | **Pendente** | **Pendente** | **Pendente** | **Pendente** |
-| T8 | E02 | GPT-6 | Alto | **Pendente** | **Pendente** | **Pendente** | **Pendente** | **Pendente** |
-| T8 | E03 | GPT-5.6 | Médio | **Pendente** | **Pendente** | **Pendente** | **Pendente** | **Pendente** |
-| T8 | E04 | GPT-5.6 | Alto | **Pendente** | **Pendente** | **Pendente** | **Pendente** | **Pendente** |
+As entradas **Referência fornecida** não são reproduções independentes da Tarefa 7. `Pendente` não deve ser convertido em veredito sem ter o registro integral da execução.
 
-**Comparação principal:** E01 × E02 (somente esforço), E03 × E04 (somente esforço), E01 × E03 (somente versão), E02 × E04 (somente versão). Comparar com T7 como histórico descritivo, pois seu esforço não foi registrado.
+| Origem | ID | Provedor / modelo | Esforço | Documental F / R | Após logs F / R | Procedência |
+|---|---|---|---|---|---|---|
+| T7 | Base própria | OpenAI / GPT-6 | Desconhecido | Atribuído preliminarmente / Parcial | Parcial / Não Atribuído | Relatório próprio |
+| T7 | Referência | OpenAI / GPT-4o | Não informado | Atribuído / Atribuído | Parcial ou Atribuído / Não Atribuído | Gabarito do enunciado |
+| T7 | Referência | Anthropic / Claude 3.5 Sonnet | Não informado | Atribuído / Parcial | Parcial ou Atribuído / Não Atribuído | Gabarito do enunciado |
+| T7 | Referência | Google / Gemini 1.5 Pro | Não informado | Atribuído / Atribuído | Parcial ou Atribuído / Não Atribuído | Gabarito do enunciado |
+| T8 | E01 | OpenAI / GPT-6 | Médio | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E02 | OpenAI / GPT-6 | Alto | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E03 | OpenAI / GPT-5.6 | Médio | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E04 | OpenAI / GPT-5.6 | Alto | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E05 | Anthropic / Claude Sonnet 5 | Médio* | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E06 | Anthropic / Claude Sonnet 5 | Alto* | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E07 | Google / Gemini 3.1 Pro | Médio* | **Pendente** | **Pendente** | Teste não realizado |
+| T8 | E08 | Google / Gemini 3.1 Pro | Alto* | **Pendente** | **Pendente** | Teste não realizado |
+
+\* **Esforço alvo**: usar apenas quando for configurável e verificável na plataforma; senão registrar a impossibilidade ou o valor real. 
+
+**Comparações planejadas:** (1) esforço: E01×E02, E03×E04, E05×E06, E07×E08; (2) versão OpenAI: E01×E03 e E02×E04; (3) comparação qualitativa entre provedores, com ressalva de diferenças de modelos e esforço. As três referências T7 são dados secundários sem transcrições completas.
 
 ## 2. Auditoria das evidências
 
@@ -27,12 +38,15 @@
 
 ## 3. Matriz de divergências
 
-| Comparação | Mudou F? | Mudou R? | Evidências novas ou ausentes | Diagnóstico técnico melhorou? | Conclusão |
-|---|---|---|---|---|---|
-| E01 × E02 (esforço, GPT-6) | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E03 × E04 (esforço, GPT-5.6) | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E01 × E03 (versão, Médio) | Pendente | Pendente | Pendente | Pendente | Pendente |
-| E02 × E04 (versão, Alto) | Pendente | Pendente | Pendente | Pendente | Pendente |
+| Comparação | Tipo | Mudança de F/R | Evidência adicional ou ausente | Interpretação |
+|---|---|---|---|---|
+| E01 × E02 | Esforço GPT-6 | Pendente | Pendente | Pendente |
+| E03 × E04 | Esforço GPT-5.6 | Pendente | Pendente | Pendente |
+| E05 × E06 | Esforço Claude Sonnet 5 | Pendente | Pendente | Pendente |
+| E07 × E08 | Esforço Gemini 3.1 Pro | Pendente | Pendente | Pendente |
+| E01 × E03 | Versão OpenAI, esforço Médio | Pendente | Pendente | Pendente |
+| E02 × E04 | Versão OpenAI, esforço Alto | Pendente | Pendente | Pendente |
+| OpenAI × Anthropic × Google | Exploração interprovedor | Pendente | Pendente | **Não interpretar** os nomes de esforço como escala universal |
 
 ## 4. Síntese interpretativa (a completar)
 
