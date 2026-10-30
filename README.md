@@ -1,4 +1,4 @@
-# Avaliação de Artefatos de Software com LLMs — SBRC 2026
+# Avaliação de Artefatos de Software com multiplas LLMs ativ.7 — SBRC 2026
 
 > **Estudo de caso:** análise documental e auditoria de logs do artefato *Selection Agent / K-Agent* para Aprendizado Federado.
 
