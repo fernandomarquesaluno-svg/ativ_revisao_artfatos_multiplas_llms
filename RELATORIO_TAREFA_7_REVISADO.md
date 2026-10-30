@@ -9,14 +9,14 @@ Comparar as recomendações de três LLMs de provedores distintos com os selos o
 O SBRC 2026 registra os selos D, F, S e R para o trabalho correspondente. A atividade se concentra nos selos **F (Funcional)** e **R (Experimentos Reprodutíveis)**.
 
 ## 2. Modelos avaliados
-- **GPT-4o — OpenAI**
+- **GPT-6 — OpenAI**
 - **Claude 3.5 Sonnet — Anthropic**
 - **Gemini 1.5 Pro — Google**
 
 As atribuições a seguir reproduzem os resultados **relatados pelo aluno**. Sua rastreabilidade depende da preservação de respostas originais, datas, versões e prompts efetivamente enviados.
 
 ## 3. Avaliação analítica — etapa 1
-**GPT-4o:** recomendou F e R, considerando a documentação de requisitos, instalação e comandos de simulação adequada.
+**GPT-6:** recomendou F preliminarmente e avaliou R com ressalvas; a documentação isolada não comprova a execução.
 
 **Claude 3.5 Sonnet:** recomendou F e manifestou ressalvas sobre R, especialmente quanto ao provisionamento e à disponibilidade do serviço Ollama.
 
@@ -34,7 +34,7 @@ Os três pareceres foram produzidos a partir das informações documentais relat
 **Limite da evidência:** os logs informados, isoladamente, não distinguem ausência de serviço iniciado, configuração incorreta do ambiente ou defeito no artefato. Eles não comprovam que a avaliação oficial estava incorreta, tampouco que os resultados experimentais dos autores são irreprodutíveis.
 
 ## 5. Revisão relatada após os logs
-**GPT-4o:** manteve avaliação favorável a F com limitação quanto ao fluxo central e retirou a recomendação de R nesta tentativa.
+**GPT-6:** considerou F parcialmente demonstrado (categoria didática) e R não atribuído nesta tentativa, devido à interrupção do experimento principal.
 
 **Claude 3.5 Sonnet:** manteve F com ressalvas; sua cautela original em R foi reforçada pelo teste não concluído.
 
@@ -45,7 +45,7 @@ Os três pareceres foram produzidos a partir das informações documentais relat
 ## 6. Tabela comparativa
 | LLM / provedor | Fase 1: F | Fase 1: R | Fase 2: F | Fase 2: R |
 |---|---|---|---|---|
-| GPT-4o / OpenAI | Recomendado | Recomendado | Com ressalvas | Não recomendado nesta tentativa |
+| GPT-6 / OpenAI | Preliminar, condicionado | Com ressalvas | Parcialmente demonstrado | Não atribuído nesta tentativa |
 | Claude 3.5 Sonnet / Anthropic | Recomendado | Com ressalvas | Com ressalvas | Não recomendado nesta tentativa |
 | Gemini 1.5 Pro / Google | Recomendado | Recomendado | Com ressalvas | Não recomendado nesta tentativa |
 | Comitê SBRC 2026 | Atribuído | Atribuído | — | — |
@@ -80,7 +80,7 @@ Os três pareceres foram produzidos a partir das informações documentais relat
 ```
 
 ## 8. Análise e conclusão
-Na etapa documental relatada, GPT-4o e Gemini recomendaram F e R; Claude antecipou uma possível dependência crítica do Ollama. Após os logs, os modelos teriam convergido quanto à insuficiência de evidência para reproduzir o experimento principal naquela tentativa.
+Na etapa documental, Gemini recomendou F e R, Claude apontou ressalvas sobre R e GPT-6 recomendou F preliminarmente e R com ressalvas. Após os logs, os modelos teriam convergido quanto à insuficiência de evidência para reproduzir o experimento principal naquela tentativa.
 
 O estudo exemplifica como a inspeção documental e o teste operacional podem conduzir a conclusões diferentes. A interpretação tecnicamente defensável é **não ter sido possível reproduzir o experimento K-Agent com os logs apresentados**, e não afirmar que os selos oficiais deveriam ser revogados. A confirmação dos resultados multimodelo requer anexar as respostas autênticas e confirmar que cada LLM recebeu as instruções oficiais completas.
 
@@ -102,3 +102,5 @@ O estudo exemplifica como a inspeção documental e o teste operacional podem co
 1. Repositório do artefato: https://github.com/rafaeloj/sbrc2026
 2. Instruções e resultados do SBRC 2026: https://doc-artefatos.github.io/sbrc2026/
 3. Resultados oficiais: https://doc-artefatos.github.io/sbrc2026/results.html
+
+**Nota de versão:** GPT-6 substituiu GPT-4o como modelo OpenAI. Os pareceres do GPT-6 correspondem à avaliação desta conversa, e não foram simplesmente renomeados. Os resultados de Claude e Gemini são relatados pelo aluno, pendente a anexação das respostas originais.
