@@ -1,0 +1,7 @@
+provedor,modelo,etapa,F_proposto,R_proposto,status_evidencia,F_oficial,R_oficial,registro
+OpenAI,ChatGPT/Codex,analitica,candidato documental,condicionado a execucao,inspecao atual,sim,sim,README.md
+OpenAI,ChatGPT/Codex,execucao,,,bloqueada antes de iniciar artefato,sim,sim,evidencias/prechecagem_2026-11-05.json
+Anthropic,a confirmar,analitica,,,pendente,sim,sim,
+Anthropic,a confirmar,execucao,,,pendente,sim,sim,
+Google,a confirmar,analitica,,,pendente,sim,sim,
+Google,a confirmar,execucao,,,pendente,sim,sim,

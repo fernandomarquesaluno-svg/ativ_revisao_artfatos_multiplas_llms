@@ -1,25 +1,21 @@
-# Fluxograma — protocolo de avaliação da Atividade 7
+# Processo experimental da Atividade 7
 
-> Fluxograma do **procedimento exigido**. As etapas representadas não constituem, por si só, comprovação de sua execução.
+Fluxo planejado; sua presença não comprova execução. Repetir as etapas de avaliação em três provedores distintos.
 
 ```mermaid
 flowchart TD
- A["Selecionar artefato SBRC/SBSeg"] --> B["Identificar edição e selos oficiais F e R"]
- B --> C["Reunir instruções oficiais e documentação"]
- C --> D["Definir prompts equivalentes"]
- D --> E["Aplicar a pelo menos 3 LLMs / 3 provedores"]
- E --> F["Etapa 1: avaliação documental F e R"]
- F --> G["Registrar respostas e evidências citadas"]
- G --> H["Verificar evidências no repositório"]
- H --> I["Executar o artefato / reunir logs e configurações"]
- I --> J["Etapa 2: reavaliar F e R por LLM"]
- J --> K["Comparar etapa 1, etapa 2 e selos oficiais"]
- K --> L["Analisar concordâncias, divergências e limitações"]
- L --> M["Conclusão e publicação das evidências"]
+ A["Artefato, commit, artigo e regras"] --> B["Preservar selos oficiais para confronto final"]
+ B --> C["Mesmo Prompt 1 em três provedores"]
+ C --> D["Salvar pareceres e conferir evidências"]
+ D --> E["Preparar sessão prática por provedor"]
+ E --> F{"Ambiente compatível?"}
+ F -- Não --> G["Registrar impedimento e corrigir ambiente"]
+ G --> E
+ F -- Sim --> H["Executar mínimo e reivindicações possíveis"]
+ H --> I["Preservar logs, configurações e resultados"]
+ I --> J["Prompt 2: revisar F e R"]
+ J --> K["Comparar seis pareceres com decisão oficial"]
+ K --> L["Analisar concordâncias e limitações"]
 ```
 
-### Evidência já apresentada
-- Método `random`: log de simulação concluída.
-- Método `k-agent`: tentativa interrompida por `ConnectionRefusedError` na conexão com Ollama.
-
-**Importante:** uma falha de conexão não permite concluir que o K-Agent tenha defeito lógico; tampouco constitui reprodução bem-sucedida do experimento principal.
+Se um impedimento não puder ser resolvido, encerrar a sessão como bloqueada, documentar a causa e incluir essa limitação na comparação. Não repetir indefinidamente nem preencher resultados ausentes.

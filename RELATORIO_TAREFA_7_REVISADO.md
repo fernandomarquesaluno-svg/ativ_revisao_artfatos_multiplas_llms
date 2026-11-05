@@ -1,106 +1,73 @@
-# Laboratório de IA Aplicada — Tarefa 7
-**Avaliação multimodelo de artefatos científicos**  
-**Autor:** Fernando Henrique de Souza Marques  
-**Artefato:** Selection Agent (K-Agent) — SBRC 2026
+# Atividade 7 — Avaliação de artefatos com três LLMs
 
-## 1. Objetivo e recorte
-Comparar as recomendações de três LLMs de provedores distintos com os selos oficialmente atribuídos ao artefato, considerando a análise documental e a reavaliação à luz dos resultados de execução. Artefato: https://github.com/rafaeloj/sbrc2026. Fonte oficial: https://doc-artefatos.github.io/sbrc2026/results.html.
+Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
-O SBRC 2026 registra os selos D, F, S e R para o trabalho correspondente. A atividade se concentra nos selos **F (Funcional)** e **R (Experimentos Reprodutíveis)**.
+**Estado: documentação corrigida; experimento com três provedores ainda incompleto.** Não há registros primários suficientes para apresentar a comparação como concluída.
 
-## 2. Modelos avaliados
-- **GPT-6 — OpenAI**
-- **Claude 3.5 Sonnet — Anthropic**
-- **Gemini 1.5 Pro — Google**
+## Artefato, regras e referência oficial
 
-As atribuições a seguir reproduzem os resultados **relatados pelo aluno**. Sua rastreabilidade depende da preservação de respostas originais, datas, versões e prompts efetivamente enviados.
+- Artefato: [Selection Agent / K-Agent](https://github.com/rafaeloj/sbrc2026).
+- Trabalho no resultado oficial: **Agente K-alibra: Estratégia para Seleção de K-Clientes em Aprendizado Federado autônoma**.
+- Edição: SBRC 2026. [Instruções de revisão](https://doc-artefatos.github.io/sbrc2026/revinstrucoes.html).
+- [Resultados oficiais](https://doc-artefatos.github.io/sbrc2026/results.html): D, F, S e R presentes na mesma linha que aponta para rafaeloj/sbrc2026. Verificado no HTML oficial em 05/11/2026.
+- Versão inspecionada nesta revisão: `949f83c6db86d682240b7a61d1d2d406609413b6`. Isso não identifica automaticamente a versão avaliada pelo CTA ou usada nos registros históricos.
 
-## 3. Avaliação analítica — etapa 1
-**GPT-6:** recomendou F preliminarmente e avaliou R com ressalvas; a documentação isolada não comprova a execução.
+## Correção dos critérios
 
-**Claude 3.5 Sonnet:** recomendou F e manifestou ressalvas sobre R, especialmente quanto ao provisionamento e à disponibilidade do serviço Ollama.
+**F — Funcional:** as regras exigem executar e observar algumas funcionalidades, com prova de execução. O teste mínimo documentado pelos autores usa seleção aleatória. A falha posterior do K-Agent não nega automaticamente F se esse teste mínimo tiver sido efetivamente executado e comprovado.
 
-**Gemini 1.5 Pro:** recomendou F e R, com ênfase nos procedimentos e scripts de orquestração apresentados.
+**R — Experimentos Reprodutíveis:** exige executar os experimentos e alcançar as principais reivindicações do artigo, com resultados verificáveis. Ler instruções ou recalcular gráficos a partir de dados prontos não comprova a execução integral.
 
-Os três pareceres foram produzidos a partir das informações documentais relatadas; a atribuição de um selo oficial depende de critérios e avaliação completos, não apenas do README.
+“Parcial” não é selo oficial. Nesta revisão usamos “evidência insuficiente” para descrever nossa limitação, sem modificar os selos do evento. A etapa analítica pode formular uma recomendação, mas deve explicitar que a prova prática ainda não ocorreu.
 
-## 4. Execução — etapa 2
-**Ambiente informado:** Ubuntu 22.04 LTS, Python 3.10, PyTorch 2.7.1, 8 vCPUs e 16 GB RAM.
+## Evidências verificadas diretamente
 
-**Teste 1 — baseline aleatório:** `selection-method='random'`, uma rodada. Log fornecido: `[SUCCESS] Simulation finished`; arquivo de modelo salvo em `models/20260315_random_final_model_.pt`. Evidencia a execução do fluxo mínimo, não a funcionalidade principal do K-Agent.
+| ID | Evidência no commit inspecionado | Implicação |
+|---|---|---|
+| E1 | README: instalação, dependências, teste mínimo random e experimentos | Há orientação documental para avaliar F e R |
+| E2 | `selection-agent/pyproject.toml`: app com 5 clientes, sample-size=15, random_selection | Padrões diferem da configuração da reivindicação principal |
+| E3 | README: principal experimento com 25 clientes, sample-size=-1, oort_selection, 50 rodadas | É preciso preservar configuração efetiva e saídas |
+| E4 | TOML: federação tem outro num-supernodes=5; recursos declaram 30 CPUs e 1 GPU | Ajustar ambos os locais; CPU-only requer configuração explícita |
+| E5 | `server_app.py`: nome do modelo contém horário/dia/mês, método, clientes e amostra | O nome abreviado citado no relatório anterior não comprova origem nesta versão |
+| E6 | `agent/k_agent.py`: tentativas e captura de exceções | O trecho narrativo de erro não basta para reconstruir toda a falha |
+| E7 | Diretório `notebooks/sbrc2026` presente | Existência de notebooks é evidência estrutural; não é reprodução realizada |
 
-**Teste 2 — K-Agent:** `selection-method='k-agent'`, 50 rodadas previstas. A chamada ao modelo `qwen3:0.6b` via `http://localhost:11434` resultou em `ConnectionRefusedError` e interrupção. O experimento central não foi concluído.
+Fontes: [README](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/README.md), [TOML](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/pyproject.toml), [servidor](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/selection_agent/server_app.py) e [agente](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/selection_agent/agent/k_agent.py).
 
-**Limite da evidência:** os logs informados, isoladamente, não distinguem ausência de serviço iniciado, configuração incorreta do ambiente ou defeito no artefato. Eles não comprovam que a avaliação oficial estava incorreta, tampouco que os resultados experimentais dos autores são irreprodutíveis.
+O README estima cerca de três horas para 50 rodadas da primeira reivindicação e duas horas para a segunda. São estimativas dos autores, não medições desta revisão. Ausência de ambiente adequado limita a avaliação, não constitui defeito demonstrado no artefato.
 
-## 5. Revisão relatada após os logs
-**GPT-6:** considerou F parcialmente demonstrado (categoria didática) e R não atribuído nesta tentativa, devido à interrupção do experimento principal.
+## Proveniência dos registros anteriores
 
-**Claude 3.5 Sonnet:** manteve F com ressalvas; sua cautela original em R foi reforçada pelo teste não concluído.
+Os materiais anteriores contêm um relato de êxito do random e uma falha de conexão com Ollama. Parte da documentação os chamou de “logs fornecidos no enunciado”, mas o enunciado apresentado nesta revisão não fornece esses logs. A origem, o commit e os arquivos completos precisam ser confirmados. Mantemos os trechos como **registros históricos relatados**, sem classificá-los como novas execuções.
 
-**Gemini 1.5 Pro:** manteve F com ressalvas e retirou a recomendação de R na tentativa apresentada.
+Também foram atribuídos pareceres a GPT, Claude e Gemini sem transcrições suficientes. Esses valores foram retirados da tabela de resultados auditáveis. Nenhuma resposta desses provedores foi simulada nesta revisão.
 
-**Importante:** “parcial” é uma categoria descritiva neste relatório; não corresponde a selo intermediário oficial. A falha observada de conexão não constitui, por si só, fundamento suficiente para invalidar um selo concedido pelo comitê.
+## Matriz de comparação atual
 
-## 6. Tabela comparativa
-| LLM / provedor | Fase 1: F | Fase 1: R | Fase 2: F | Fase 2: R |
+| Avaliador / provedor | Analítica F / R | Execução F / R | Oficial F / R | Evidência |
 |---|---|---|---|---|
-| GPT-6 / OpenAI | Preliminar, condicionado | Com ressalvas | Parcialmente demonstrado | Não atribuído nesta tentativa |
-| Claude 3.5 Sonnet / Anthropic | Recomendado | Com ressalvas | Com ressalvas | Não recomendado nesta tentativa |
-| Gemini 1.5 Pro / Google | Recomendado | Recomendado | Com ressalvas | Não recomendado nesta tentativa |
-| Comitê SBRC 2026 | Atribuído | Atribuído | — | — |
+| ChatGPT/Codex — OpenAI, revisão atual | F: candidato documental; R: condicionado à execução | F e R: não verificados por execução neste ambiente | Sim / Sim | Inspeção E1–E7; pré-checagem local |
+| Claude — Anthropic, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
+| Gemini — Google, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
 
-## 7. Fluxograma do procedimento
-```text
-[Artefato SBRC 2026 + selos oficiais]
-                 |
-                 v
-[Instruções oficiais + documentação]
-                 |
-                 v
-[Prompt 1 padronizado -> 3 LLMs]
-                 |
-                 v
-[Avaliação analítica: F e R + evidências]
-                 |
-                 v
-[Verificação no repositório + execução/logs]
-                 |
-                 v
-[Prompt 2 padronizado -> mesmas 3 LLMs]
-                 |
-                 v
-[Reavaliação F e R + justificativas]
-                 |
-                 v
-[Comparação com selos oficiais]
-                 |
-                 v
-[Concordâncias, divergências e limitações]
-```
+O identificador exato do modelo da sessão atual não foi registrado. A tabela expressa o estado da evidência; não representa seis avaliações concluídas. Não se calcula taxa de concordância com células pendentes.
 
-## 8. Análise e conclusão
-Na etapa documental, Gemini recomendou F e R, Claude apontou ressalvas sobre R e GPT-6 recomendou F preliminarmente e R com ressalvas. Após os logs, os modelos teriam convergido quanto à insuficiência de evidência para reproduzir o experimento principal naquela tentativa.
+## Parecer atual da OpenAI
 
-O estudo exemplifica como a inspeção documental e o teste operacional podem conduzir a conclusões diferentes. A interpretação tecnicamente defensável é **não ter sido possível reproduzir o experimento K-Agent com os logs apresentados**, e não afirmar que os selos oficiais deveriam ser revogados. A confirmação dos resultados multimodelo requer anexar as respostas autênticas e confirmar que cada LLM recebeu as instruções oficiais completas.
+Na inspeção documental, F é plausível porque há um teste mínimo especificado. R tem roteiro, mas depende de configurar e executar as reivindicações. Os trechos históricos, se confirmados, sustentariam a execução de uma funcionalidade básica e a interrupção do experimento principal. Sua autenticidade e completude ainda não foram verificadas.
 
-## Apêndice A — Prompt 1 (texto informado/reconstruído)
-> Atue como um avaliador do comitê de artefatos do evento SBRC 2026. Com base exclusivamente nas instruções oficiais de avaliação de artefatos do SBRC 2026 e na documentação disponível no repositório (https://github.com/rafaeloj/sbrc2026), faça uma avaliação analítica do artefato "Selection Agent (K-Agent)". Indique se os selos F (Funcional) e R (Reprodutível) devem ser atribuídos. Para cada selo, exija o veredito final, as evidências encontradas na documentação que sustentam a sua decisão e aponte quaisquer falhas ou lacunas identificadas.
+A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executável Ollama no ambiente de revisão. A tentativa de iniciar `flwr` falhou por executável ausente, antes de carregar o artefato. Nenhum treinamento nem reprodução científica foi realizado aqui. O ambiente não corresponde ao ambiente informado nos materiais históricos.
 
-## Apêndice B — Prompt 2 (texto informado/reconstruído)
-> Agora, reavalie os selos F e R com base nos resultados da execução prática do artefato. Ambiente: Ubuntu 22.04 LTS, Python 3.10, PyTorch 2.7.1, CPU 8 vCPUs, 16 GB RAM.
->
-> **Teste 1 (Método random):** Comando: `cd selection-agent && flwr run . local-simulation` (selection-method='random', num-server-rounds=1). Resultado: `[SUCCESS] Simulation finished`. Modelo salvo em `models/20260315_random_final_model_.pt`.
->
-> **Teste 2 (Método K-Agent):** Comando: `selection-method='k-agent'`, `num-server-rounds=50`. Resultado: Tentativa de conexão com Ollama (modelo qwen3:0.6b) gerou erro `ConnectionRefusedError` em `http://localhost:11434`. A execução falhou e foi abortada.
->
-> Com base nessas evidências de execução, confirme ou revise os seus julgamentos anteriores para os selos F e R, justificando a decisão.
+**Conclusão:** não há base para afirmar consistência ou divergência entre três LLMs. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A tarefa permanece incompleta até reunir as duas etapas por provedor e verificar suas evidências.
 
-**Nota metodológica:** os textos dos prompts foram informados como reconstruídos, não autenticados por exportação das conversas. As respostas das LLMs são descritas no relatório, mas os registros integrais ainda devem ser anexados. As instruções oficiais devem ter sido de fato fornecidas a cada LLM, e não apenas citadas por URL.
+## O que falta para concluir
 
-## Referências
-1. Repositório do artefato: https://github.com/rafaeloj/sbrc2026
-2. Instruções e resultados do SBRC 2026: https://doc-artefatos.github.io/sbrc2026/
-3. Resultados oficiais: https://doc-artefatos.github.io/sbrc2026/results.html
+1. Fixar o mesmo commit, artigo, instruções e configurações para as três LLMs. Guardar hash das regras e identificar a versão oficial, quando disponível.
+2. Executar o Prompt 1 em três provedores e salvar respostas integrais, modelo exato, data, configurações e limitações de acesso.
+3. Preparar ambiente compatível; salvar `pip freeze`, configuração efetiva e estado de Ollama/modelo. Usar o procedimento do README para editar o TOML e executar `flwr run . local-simulation`.
+4. Realizar ou conduzir execução/uso com cada LLM, preservando comandos, stdout, stderr, código de saída, tempo e arquivos gerados. Se a interface não executa, registrar quem operou os comandos sob orientação da LLM. Apenas apresentar os mesmos logs às três LLMs é análise de logs, não três execuções independentes.
+5. Executar o Prompt 2 com evidências reais; verificar citações e arquivos diretamente.
+6. Comparar F/R analítico, F/R após execução e F/R oficial por LLM; explicar mudanças e limitações.
+7. Validar se o protocolo de execução compartilhada, caso escolhido, atende ao entendimento do professor. O caminho mais direto ao enunciado é uma sessão prática documentada por provedor.
 
-**Nota de versão:** GPT-6 substituiu GPT-4o como modelo OpenAI. Os pareceres do GPT-6 correspondem à avaliação desta conversa, e não foram simplesmente renomeados. Os resultados de Claude e Gemini são relatados pelo aluno, pendente a anexação das respostas originais.
+Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo](PROTOCOLO_EXECUCAO.md) e a [planilha CSV](comparacao_llms.csv) estão preparados. Pendências não equivalem a resultados negativos.

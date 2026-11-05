@@ -1,0 +1,12 @@
+{
+  "data": "2026-11-05",
+  "executor": "ChatGPT/Codex (OpenAI)",
+  "python": "3.12.14",
+  "system": "Linux",
+  "flwr_disponivel": false,
+  "torch_disponivel": false,
+  "ollama_executavel": false,
+  "treinamento_realizado": false,
+  "erro": "FileNotFoundError: executável flwr ausente; processo não iniciado",
+  "exit_code": null
+}
