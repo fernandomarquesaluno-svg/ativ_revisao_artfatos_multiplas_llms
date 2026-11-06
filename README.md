@@ -60,15 +60,13 @@ A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executáv
 
 **Conclusão atualizada:** há divergência verificável entre os pareceres textuais: GPT-6 não recomenda R nessa tentativa; Claude mantém classificação analítica “Parcial” com risco de não atribuição; Gemini mantém atribuição de R com ressalva. Nenhuma dessas avaliações demonstra a reprodução da reivindicação principal. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A avaliação permanece limitada pela ausência de logs integrais e execuções independentes.
 
-## O que falta para concluir
+## Estado da entrega e pendências
 
-1. Fixar o mesmo commit, artigo, instruções e configurações para as três LLMs. Guardar hash das regras e identificar a versão oficial, quando disponível.
-2. Executar o Prompt 1 em três provedores e salvar respostas integrais, modelo exato, data, configurações e limitações de acesso.
-3. Preparar ambiente compatível; salvar `pip freeze`, configuração efetiva e estado de Ollama/modelo. Usar o procedimento do README para editar o TOML e executar `flwr run . local-simulation`.
-4. Realizar ou conduzir execução/uso com cada LLM, preservando comandos, stdout, stderr, código de saída, tempo e arquivos gerados. Se a interface não executa, registrar quem operou os comandos sob orientação da LLM. Apenas apresentar os mesmos logs às três LLMs é análise de logs, não três execuções independentes.
-5. Executar o Prompt 2 com evidências reais; verificar citações e arquivos diretamente.
-6. Comparar F/R analítico, F/R após execução e F/R oficial por LLM; explicar mudanças e limitações.
-7. Validar se o protocolo de execução compartilhada, caso escolhido, atende ao entendimento do professor. O caminho mais direto ao enunciado é uma sessão prática documentada por provedor.
+**Concluído como estudo de caso documental:** foram reunidos os pareceres originais Claude e Gemini, a nova avaliação GPT-6, a tabela comparativa, o relato de duas tentativas históricas de execução, o fluxograma, a apresentação corrigida de nove slides e o registro de limitações.
+
+**Permanece pendente para demonstrar um experimento de execução plenamente auditável:** recuperar/reexecutar no Ubuntu um ambiente com configurações, logs completos, outputs, métricas e resultados das reivindicações; confirmar variantes dos modelos Claude/Gemini; realizar, se exigido, uma repetição controlada com prompts e snapshots idênticos. Sem isso, não afirmar conclusão de três execuções práticas ou reprodução do K-Agent.
+
+**Divergência metodológica:** os prompts originais recebidos de Claude e Gemini e a nova avaliação GPT-6 não têm identidade literal comprovada. A [padronização proposta](PROMPTS_UTILIZADOS.md) é recomendação para nova rodada, não descrição retroativa de um controle que não ocorreu.
 
 Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo](PROTOCOLO_EXECUCAO.md) e a [planilha CSV](comparacao_llms.csv) estão preparados. Pendências não equivalem a resultados negativos.
 
@@ -91,3 +89,8 @@ O aluno forneceu a [transcrição completa dos dois prompts e duas respostas](ev
 ## Situação da execução sem acesso ao Ubuntu — 05/11/2026
 
 O aluno confirmou não ter mais acesso à máquina Ubuntu em que relatou as duas tentativas. Assim, não foi possível recuperar os logs integrais, o histórico dos comandos, os parâmetros efetivos ou o modelo salvo. **Não há uma nova execução nesta revisão.** Os resultados Random (sucesso mínimo relatado) e K-Agent (interrupção relatada por falha de conexão Ollama) foram reunidos como **evidência histórica secundária** no [registro de execuções relatadas](evidencias/REGISTRO_EXECUCOES_RELATADAS.md). Esse registro é insuficiente para demonstrar a reprodução da reivindicação experimental principal. Os slides e o relatório devem explicitar a limitação sem afirmar falha permanente do artefato ou invalidade dos selos oficiais.
+
+
+## Apresentação final revisada
+
+[Conteúdo auditável dos nove slides, com referências](APRESENTACAO_FINAL_9_SLIDES.md). A apresentação editável PowerPoint e a versão PDF foram geradas e revisadas visualmente na conversa de 05/11/2026. Por limitação do conector de GitHub para arquivos binários neste fluxo, o repositório contém **o conteúdo textual completo** da apresentação, não os arquivos PPTX/PDF.
