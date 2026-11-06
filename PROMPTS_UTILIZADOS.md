@@ -1,6 +1,8 @@
 # Prompts padronizados para coleta
 
-**Estado:** preparados nesta revisão; ainda não aplicados às três LLMs. Os prompts históricos permanecem no histórico Git. Não apresentar estes textos como transcrições antigas.
+**Estado:** **protocolo padronizado prospectivo**, preparado para uma eventual replicação controlada. Estes textos **não foram aplicados literalmente e de modo idêntico às três LLMs** nas conversas originais. As interações históricas de Claude e Gemini e a nova avaliação de GPT-6 estão registradas em arquivos separados. Não apresentar os prompts abaixo como transcrições antigas nem alegar controle experimental inexistente.
+
+**O que foi efetivamente documentado:** três avaliações documentais e três reavaliações feitas com resumos de execução fornecidos pelo aluno. Os prompts e materiais das sessões podem diferir. Para rastreabilidade consulte [Claude](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md), [Gemini](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md) e [GPT-6](AVALIACAO_GPT6_2026-11-05.md).
 
 ## Materiais comuns
 
