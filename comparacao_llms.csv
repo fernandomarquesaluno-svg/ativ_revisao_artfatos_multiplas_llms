@@ -1,6 +1,6 @@
 provedor,modelo,etapa,F_proposto,R_proposto,status_evidencia,F_oficial,R_oficial,registro
-OpenAI,ChatGPT/Codex,analitica,candidato documental,condicionado a execucao,inspecao atual,sim,sim,README.md
-OpenAI,ChatGPT/Codex,execucao,,,bloqueada antes de iniciar artefato,sim,sim,evidencias/prechecagem_2026-11-05.json
+OpenAI,GPT-6,analitica,candidato documental,evidencia insuficiente sem execucao,nova avaliacao GPT-6 em 05-11-2026,sim,sim,AVALIACAO_GPT6_2026-11-05.md
+OpenAI,GPT-6,execucao,inconclusivo no K-Agent,nao recomendado nesta tentativa,analise de logs resumidos sem execucao propria,sim,sim,AVALIACAO_GPT6_2026-11-05.md
 Anthropic,a confirmar,analitica,,,pendente,sim,sim,
 Anthropic,a confirmar,execucao,,,pendente,sim,sim,
 Google,Gemini (variante nao indicada no PDF),analitica,atribuido,atribuido,resposta original em PDF,sim,sim,evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md
