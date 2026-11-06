@@ -40,7 +40,7 @@ O README estima cerca de três horas para 50 rodadas da primeira reivindicação
 
 Os materiais anteriores contêm um relato de êxito do random e uma falha de conexão com Ollama. Parte da documentação os chamou de “logs fornecidos no enunciado”, mas o enunciado apresentado nesta revisão não fornece esses logs. A origem, o commit e os arquivos completos precisam ser confirmados. Mantemos os trechos como **registros históricos relatados**, sem classificá-los como novas execuções.
 
-Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com Gemini, contendo os dois prompts e as duas respostas. **O Gemini manteve F e R, sendo R com ressalva, após receber trechos de logs resumidos.** Isso contradiz documentos secundários anteriores que afirmavam retirada de R. A transcrição original do Claude também foi apresentada em 05/11/2026; a nova avaliação GPT-6 está documentada separadamente. Nenhuma resposta foi simulada nesta revisão.
+Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com Gemini, contendo os dois prompts e as duas respostas. **O Gemini manteve F e R, sendo R com ressalva, após receber trechos de logs resumidos.** Isso contradiz documentos secundários anteriores que afirmavam retirada de R. A transcrição original do Claude também foi apresentada em 05/11/2026, e a transcrição histórica GPT-6 foi entregue em 06/11/2026. Uma outra avaliação GPT-6 elaborada antes da entrega da transcrição original está preservada separadamente e não integra a comparação principal. Nenhuma resposta foi simulada nesta revisão.
 
 ## Matriz de comparação atual
 
@@ -62,7 +62,7 @@ A pré-checagem técnica de 05/11/2026, realizada em outro ambiente de revisão,
 
 ## Estado da entrega e pendências
 
-**Concluído como estudo de caso documental:** foram reunidos os pareceres originais Claude e Gemini, a nova avaliação GPT-6, a tabela comparativa, o relato de duas tentativas históricas de execução, o fluxograma, a apresentação corrigida de nove slides e o registro de limitações.
+**Concluído como estudo de caso documental:** foram reunidos os pareceres originais GPT-6, Claude e Gemini, a tabela comparativa, o relato de duas tentativas históricas de execução, o fluxograma, a apresentação corrigida de nove slides e o registro de limitações.
 
 **Permanece pendente para demonstrar um experimento de execução plenamente auditável:** recuperar/reexecutar no Ubuntu um ambiente com configurações, logs completos, outputs, métricas e resultados das reivindicações; confirmar variantes dos modelos Claude/Gemini; realizar, se exigido, uma repetição controlada com prompts e snapshots idênticos. Sem isso, não afirmar conclusão de três execuções práticas ou reprodução do K-Agent.
 
