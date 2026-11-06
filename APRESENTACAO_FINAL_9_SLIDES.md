@@ -2,7 +2,7 @@
 
 **Tema:** Avaliação multimodelo de artefatos científicos: Selection Agent (K-Agent), SBRC 2026.  
 **Autor:** Fernando Henrique de Souza Marques — UNIPAMPA.  
-**Atualização:** 06/11/2026 — conversa original GPT-6 e padronização conferidas.  
+**Atualização:** 06/11/2026 — auditoria dos logs reais do Codespaces e seleção de K-Agent a partir da segunda rodada.  
 **Duração sugerida:** até 5 minutos.  
 **Formatos locais preparados:** PowerPoint editável e PDF. Esta versão em Markdown preserva o conteúdo corrigido no repositório; os arquivos binários PPTX/PDF foram entregues na conversa de preparação e não são anexados automaticamente pelo conector GitHub.
 
@@ -51,13 +51,14 @@ O Gemini **não retirou R** na transcrição original; considerou a falha do Oll
 
 Fonte: [registro da conversa Gemini](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md).
 
-## Slide 6 — Evidências de execução disponíveis
+## Slide 6 — Execuções novas e evidência verificável
 
-- **Random, 1 rodada:** mensagem de sucesso relatada `[SUCCESS] Simulation finished`. O arquivo de pesos citado não foi recuperado.
-- **K-Agent, 50 rodadas previstas:** `ConnectionRefusedError` ao acessar a API Ollama em `localhost:11434`. A execução foi interrompida no relato.
-- **Ausente:** acesso à máquina Ubuntu, logs completos, configurações efetivas e resultados quantitativos que sustentem redução de tráfego de 44,4%–59%.
+- **Random, Codespaces, 1 rodada:** `exit_code=0`, cinco clientes, arquivo do modelo salvo e log integral.
+- **Configuração `k-agent`, Codespaces, 1 rodada:** `exit_code=0` e modelo salvo; porém a função de seleção de clientes só é chamada a partir da **segunda rodada**. Logo, **a consulta à LLM e a seleção pelo agente não foram demonstradas**.
+- **Ollama:** `qwen3:0.6b` instalado, API de estado acessível. Sem chamadas de inferência nos logs disponíveis.
+- **Histórico analisado pelas três LLMs:** tentativa anterior de 50 rodadas interrompida por `ConnectionRefusedError`; os logs antigos completos continuam indisponíveis.
 
-Fonte: [registro de execuções relatadas](evidencias/REGISTRO_EXECUCOES_RELATADAS.md).
+Fonte: [Auditoria dos três pacotes Codespaces](evidencias/AUDITORIA_CODESPACES_2026-11-06.md).
 
 ## Slide 7 — Tabela comparativa
 
@@ -73,16 +74,16 @@ Fonte: [matriz CSV](comparacao_llms.csv) e [resultado oficial](https://doc-artef
 
 ## Slide 8 — Discussão crítica
 
-**Concordância factual:** nos registros relatados, o experimento central K-Agent não chegou à conclusão.
+**Concordância factual:** nos registros antigos relatados, o experimento central K-Agent não chegou à conclusão. Os novos logs comprovam execução básica, mas **não exercitam a seleção pelo agente** na rodada 1.
 
 **Divergência de decisão:** com os mesmos dois prompts e a mesma falha resumida, as LLMs recomendaram diferentemente R (GPT-6: parcial; Claude: parcial com risco; Gemini: atribuído com ressalva). Isso mostra diferença de critérios de evidência e limitações da avaliação automatizada.
 
-**Limite:** a falha operacional não demonstra defeito do algoritmo e a ausência de execução completa não invalida os selos oficiais.
+**Limite:** a falha antiga não demonstra defeito do algoritmo. Os novos logs não comprovam inferência LLM nem a reprodução de 50 rodadas, e não invalidam os selos oficiais.
 
 ## Slide 9 — Conclusão
 
 1. Foram documentadas três avaliações documentais e três reavaliações usando **os mesmos dois prompts**, com trechos de logs relatados.
-2. Não há evidência experimental original suficiente para comprovar a reprodução das reivindicações quantitativas do K-Agent nesta tentativa.
+2. Agora há logs reais de Random e uma rodada nominal de K-Agent. Contudo, o agente só é acionado na rodada 2: falta demonstrar a integração com a LLM e reproduzir as reivindicações quantitativas.
 3. Os selos F e R do SBRC 2026 permanecem oficialmente atribuídos, independentemente desta análise de evidência limitada.
 
 ## Rastreabilidade e ressalvas
@@ -90,5 +91,7 @@ Fonte: [matriz CSV](comparacao_llms.csv) e [resultado oficial](https://doc-artef
 - [Relatório revisado](RELATORIO_TAREFA_7_REVISADO.md).
 - [Fluxo e limitações do protocolo](FLUXOGRAMA.md).
 - [Prompts padronizados propostos para futuras replicações](PROMPTS_UTILIZADOS.md).
+
+**Observação temporal:** os logs novos de 06/11/2026 foram coletados após as conversas originais dos três modelos e não alteram seus pareceres. Próximo teste: [K-Agent em duas rodadas](scripts/codespaces/run_kagent_2rounds.sh).
 
 **Aviso de comparabilidade:** os prompts históricos foram **iguais** entre os três modelos. Não foi demonstrada identidade de snapshot do repositório, acesso aos mesmos documentos e condições de execução entre provedores. Comparar como **estudo de caso com prompts padronizados e limitações de evidência experimental**, sem atribuir rigor de reprodução não comprovado.
