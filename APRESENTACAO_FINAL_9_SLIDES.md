@@ -1,7 +1,7 @@
 # Apresentação final auditada — Atividade 7 (9 slides)
 
 **Data:** 06/11/2026 · **Duração:** 3–5 minutos · **Artefato:** Selection Agent / K-Agent (SBRC 2026).  
-**Princípio central:** o enunciado da Tarefa 7 não exige explicitamente executar 50 rodadas. Essa contagem pertence às reivindicações do artigo, relevantes para demonstrar R cientificamente. A seleção por LLM foi observada em duas rodadas.
+**Princípio central:** a execução reduzida demonstrou a seleção real por LLM em duas rodadas. A reprodução quantitativa das principais reivindicações do artigo não foi comprovada.
 
 ## Slide 1 — Avaliação multimodelo do K-Agent
 GPT-6 · Claude · Gemini. Comparação de pareceres F/R e evidência real de execução.
@@ -28,7 +28,7 @@ Documental: F atribuído; R atribuído. Após logs: F mantido; R mantido **com r
 - **Random:** 1 rodada, `exit_code=0`.
 - **K-Agent:** 2 rodadas, 5 clientes, `exit_code=0`.
 - **Ollama + Qwen3:** 2 chamadas HTTP 200, `oort_selection(k=1)`, 1 cliente selecionado e treinado.
-- **R:** nem 50 rodadas nem redução de tráfego da pesquisa foram reproduzidas nesta avaliação.
+- **R:** os resultados quantitativos principais da pesquisa não foram reproduzidos nesta avaliação.
 Fonte: [Auditoria do teste real](evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md).
 
 ## Slide 8 — Comparação histórica após os logs
