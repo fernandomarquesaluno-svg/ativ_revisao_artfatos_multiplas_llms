@@ -86,3 +86,8 @@ A impressão PDF da conversa mostra dois prompts e duas respostas da LLM. **F: a
 ## Avaliação original Claude — 05/11/2026
 
 O aluno forneceu a [transcrição completa dos dois prompts e duas respostas](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md). **Documento: F=Parcial e R=Parcial; após os logs resumidos: F=Parcial mantido e R=Parcial mantido, com risco de rebaixamento.** Portanto, é falso que Claude tenha “negado R definitivamente” nos registros originais apresentados. “Parcial” é terminologia do parecer, não selo oficial. A versão exata do modelo Claude não aparece na transcrição. A inspeção do commit referenciado confirma três observações do Claude: caminho do script Ollama diferente do indicado no README, duas entradas `num-supernodes` no TOML e notebook com caminho absoluto para pasta do autor. As hipóteses causais do Claude sobre a conexão Ollama não constituem comprovação da causa efetiva do erro.
+
+
+## Situação da execução sem acesso ao Ubuntu — 05/11/2026
+
+O aluno confirmou não ter mais acesso à máquina Ubuntu em que relatou as duas tentativas. Assim, não foi possível recuperar os logs integrais, o histórico dos comandos, os parâmetros efetivos ou o modelo salvo. **Não há uma nova execução nesta revisão.** Os resultados Random (sucesso mínimo relatado) e K-Agent (interrupção relatada por falha de conexão Ollama) foram reunidos como **evidência histórica secundária** no [registro de execuções relatadas](evidencias/REGISTRO_EXECUCOES_RELATADAS.md). Esse registro é insuficiente para demonstrar a reprodução da reivindicação experimental principal. Os slides e o relatório devem explicitar a limitação sem afirmar falha permanente do artefato ou invalidade dos selos oficiais.
