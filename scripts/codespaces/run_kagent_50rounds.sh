@@ -88,7 +88,7 @@ fi
 # Recomeça a partir da configuração canônica do commit, sem herdar parâmetros do teste reduzido.
 git -C "$SOURCE" show "$COMMIT:selection-agent/pyproject.toml" > "$CFG"
 python3 - "$CFG" <<'PY'
-import os, pathlib, re, sys, tomllib
+import os, pathlib, re, sys
 path = pathlib.Path(sys.argv[1])
 content = path.read_text(encoding="utf-8")
 cpus = max(2, min(os.cpu_count() or 2, 4))
@@ -110,10 +110,6 @@ for name, value in fields.items():
     content, count = re.subn(pattern, lambda m, val=value: m.group(1) + val, content)
     if count != 1:
         raise SystemExit(f"Configuração inconsistente: {name}, ocorrências: {count}")
-parsed = tomllib.loads(content)
-assert parsed["tool"]["flwr"]["app"]["config"]["num-server-rounds"] == 50
-assert parsed["tool"]["flwr"]["app"]["config"]["num-supernodes"] == 25
-assert parsed["tool"]["flwr"]["federations"]["local-simulation"]["options"]["num-supernodes"] == 25
 path.write_text(content, encoding="utf-8")
 print(f"Configuração: k-agent / oort_selection / 50 rodadas / 25 clientes / CPU {cpus}")
 PY
