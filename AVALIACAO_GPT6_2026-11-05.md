@@ -1,3 +1,7 @@
+> **DOCUMENTO HISTÓRICO — NÃO É O PARECER GPT-6 DA COMPARAÇÃO PRINCIPAL.** Em 06/11/2026 o aluno disponibilizou a [transcrição da conversa original GPT-6](evidencias/GPT6_TRANSCRICAO_ORIGINAL_2026-11-06.md), com exatamente os mesmos dois prompts utilizados pelo Claude e o mesmo conteúdo do Gemini. **O resultado primário a usar na Atividade 7 é F: Atribuído → Parcial; R: Parcial → Parcial.** O texto abaixo documenta uma avaliação posterior separada e não substitui a transcrição histórica.
+
+---
+
 # Avaliação independente GPT-6 — Atividade 7
 
 **Data:** 05/11/2026  
