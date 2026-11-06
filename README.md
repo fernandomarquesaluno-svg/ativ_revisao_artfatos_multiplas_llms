@@ -1,5 +1,8 @@
 # Atividade 7 — Avaliação de artefatos com três LLMs
 
+> **REVISÃO DEFINITIVA (06/11/2026):** [Auditoria dos 14 requisitos da disciplina](CHECKLIST_CONFORMIDADE_TAREFA7_2026-11-06.md) · [Fluxograma auditado](FLUXOGRAMA.md) · [Encerramento da entrega](ENTREGA_FINAL_ATIVIDADE_7_2026-11-06.md). O enunciado da Tarefa 7 **não exige literalmente 50 rodadas**; esse número pertence à principal reivindicação experimental do artigo. A execução independente de **duas rodadas demonstrou a funcionalidade central**, mas **R científico não foi reproduzido quantitativamente**. As LLMs **não executaram** o artefato individualmente: reavaliaram logs relatados; os testes reais do Codespaces ocorreram depois.
+
+
 > **Entrega final da Atividade 7 (06/11/2026):** [Conferência definitiva, evidências e limites metodológicos](ENTREGA_FINAL_ATIVIDADE_7_2026-11-06.md). A seleção K-Agent/Ollama foi demonstrada em duas rodadas; a reprodução científica das 50 rodadas permanece não demonstrada.\n\n
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
@@ -13,7 +16,7 @@ Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 bash scripts/codespaces/run_tests.sh
 ```
 
-O script salva novas evidências em `evidencias_codespaces_<data>.tar.gz`, para baixar e anexar à entrega. **Ainda não foi executado num Codespace.** Os resultados novos não substituem ou autenticam logs antigos. Consulte o [guia completo](CODESPACES_EXECUCAO.md). A criação do Codespace e o uso de recursos da conta dependem de autorização na interface do GitHub.
+O script salva novas evidências em `evidencias_codespaces_<data>.tar.gz`, para baixar e anexar à entrega. **O procedimento foi executado e validado posteriormente em 06/11/2026; confira a auditoria das duas rodadas.** Os resultados novos não substituem ou autenticam logs antigos. Consulte o [guia completo](CODESPACES_EXECUCAO.md). A criação do Codespace e o uso de recursos da conta dependem de autorização na interface do GitHub.
 
 
 ## Artefato, regras e referência oficial
@@ -76,7 +79,7 @@ A pré-checagem técnica de 05/11/2026, realizada em outro ambiente de revisão,
 
 **Concluído como estudo de caso documental:** foram reunidos os pareceres originais GPT-6, Claude e Gemini, a tabela comparativa, o relato de duas tentativas históricas de execução, o fluxograma, a apresentação corrigida de nove slides e o registro de limitações.
 
-**Permanece pendente para demonstrar um experimento de execução plenamente auditável:** recuperar/reexecutar no Ubuntu um ambiente com configurações, logs completos, outputs, métricas e resultados das reivindicações; confirmar variantes dos modelos Claude/Gemini; realizar, se exigido, uma repetição controlada com prompts e snapshots idênticos. Sem isso, não afirmar conclusão de três execuções práticas ou reprodução do K-Agent.
+**Permanece pendente apenas para demonstrar a reprodução científica integral e algumas limitações de proveniência:** recuperar/reexecutar no Ubuntu um ambiente com configurações, logs completos, outputs, métricas e resultados das reivindicações; confirmar variantes dos modelos Claude/Gemini; realizar, se exigido, uma repetição controlada com prompts e snapshots idênticos. Sem isso, não afirmar conclusão de três execuções práticas ou reprodução do K-Agent.
 
 **Padronização dos prompts históricos:** o Prompt 1 e o Prompt 2 são **literalmente idênticos** nas transcrições fornecidas de Claude e GPT-6; a impressão PDF do Gemini contém os mesmos enunciados com mudanças de diagramação. A identidade dos prompts não comprova, por si só, que os três modelos consultaram o mesmo snapshot do repositório ou acessaram exatamente os mesmos materiais. Os prompts de [replicação prospectiva](PROMPTS_UTILIZADOS.md) são versões mais exigentes e distintas dos prompts históricos.
 
