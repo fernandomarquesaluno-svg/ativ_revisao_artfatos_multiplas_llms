@@ -57,3 +57,19 @@ Esse teste configura **duas rodadas**, cinco clientes e CPU, tenta observar a se
 ## Resultado do teste adicional (06/11/2026)
 
 O script de **duas rodadas** foi executado e os logs originais foram fornecidos pelo aluno. Houve duas chamadas HTTP 200 ao endpoint de inferência do Ollama, o modelo Qwen3 acionou `oort_selection(k=1)`, selecionou um cliente e o Flower concluiu sem falhas (código 0). [Auditoria completa](evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md). O teste demonstrou **funcionalidade do K-Agent em cenário reduzido**, não reprodução de 50 rodadas.
+
+
+## Execução experimental de 50 rodadas — preparada, não iniciada
+
+Para tentar a **Reivindicação #1** do artigo no seu Codespaces, atualize primeiro o workspace:
+
+```bash
+git pull --ff-only origin main
+bash scripts/codespaces/run_kagent_50rounds.sh
+```
+
+Esse script usa o commit fixado dos autores, **25 supernodes em ambos os locais do TOML**, `sample-size=-1`, `selection-method=k-agent`, `oort_selection`, `prompt-type=chain-of-thought`, modelo `qwen3:0.6b` e **50 rodadas**, com adaptações explicitadas para CPU. Registra todo o terminal e as configurações, versões e saídas em `evidencias_kagent_50rodadas_<data>.tar.gz`. Preserva e restaura a configuração anterior, aplica limite máximo de cinco horas para conter loops e salva evidências mesmo se houver falha. Se houver cobrança ou cota do Codespaces, o custo é da conta do usuário.
+
+**Status:** apenas o script foi publicado; ainda **não foi executado** no Codespaces. O assistente não tem acesso ao terminal da sessão do usuário e não pode iniciar a execução diretamente.
+
+**Atenção:** a conclusão de 50 rodadas K-Agent, mesmo bem-sucedida, não comprova sozinha a redução de tráfego de 44,4–59%. É necessário um baseline/comparador equivalente, preservar métricas e efetuar a análise no notebook do artigo. Os autores estimam ~3 horas para o experimento principal; num Codespaces limitado pode durar mais ou falhar por recursos. Evite iniciar próximo do prazo de entrega se esse teste comprometer o envio dos materiais.
