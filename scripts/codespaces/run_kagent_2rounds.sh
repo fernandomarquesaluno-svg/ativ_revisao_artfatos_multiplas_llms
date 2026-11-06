@@ -73,3 +73,4 @@ mkdir -p "$OUT/models" "$OUT/outputs"
 find "$SRC/selection-agent/models" -maxdepth 1 -name '*.pt' -newer "$OUT/inicio.txt" -exec cp {} "$OUT/models/" \; 2>/dev/null || true
 find "$SRC/selection-agent/outputs" -maxdepth 1 -name '*.json' -newer "$OUT/inicio.txt" -exec cp {} "$OUT/outputs/" \; 2>/dev/null || true
 echo "K-Agent 2 rodadas: exit_code=$RESULT. Verifique logs e chamadas LLM; exit 0 isolado é insuficiente."
+exit "$RESULT"
