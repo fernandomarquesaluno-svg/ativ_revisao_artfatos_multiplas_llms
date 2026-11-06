@@ -51,4 +51,9 @@ No **mesmo Codespaces**, com o ambiente de 06/11/2026 já preparado, execute:
 bash scripts/codespaces/run_kagent_2rounds.sh
 ```
 
-Esse teste configura **duas rodadas**, cinco clientes e CPU, tenta observar a seleção do agente na rodada 2, registra as mensagens de Flower/Ollama e salva um pacote `evidencias_kagent_2rodadas_<data>.tar.gz`. Há um timeout para impedir repetição infinita de tentativas. **Esse passo ainda não foi executado.** Envie o pacote para verificar a invocação da LLM; nem duas rodadas equivalem à reprodução das 50 rodadas.
+Esse teste configura **duas rodadas**, cinco clientes e CPU, tenta observar a seleção do agente na rodada 2, registra as mensagens de Flower/Ollama e salva um pacote `evidencias_kagent_2rodadas_<data>.tar.gz`. Há um timeout para impedir repetição infinita de tentativas. **Esse teste foi concluído em 06/11/2026:** veja [auditoria do pacote original](evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md). A seleção K-Agent/LLM foi demonstrada, mas não reproduz as métricas do artigo. Envie o pacote para verificar a invocação da LLM; nem duas rodadas equivalem à reprodução das 50 rodadas.
+
+
+## Resultado do teste adicional (06/11/2026)
+
+O script de **duas rodadas** foi executado e os logs originais foram fornecidos pelo aluno. Houve duas chamadas HTTP 200 ao endpoint de inferência do Ollama, o modelo Qwen3 acionou `oort_selection(k=1)`, selecionou um cliente e o Flower concluiu sem falhas (código 0). [Auditoria completa](evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md). O teste demonstrou **funcionalidade do K-Agent em cenário reduzido**, não reprodução de 50 rodadas.
