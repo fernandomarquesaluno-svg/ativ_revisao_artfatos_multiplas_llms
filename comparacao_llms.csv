@@ -1,7 +1,7 @@
 provedor,modelo,etapa,F_proposto,R_proposto,status_evidencia,F_oficial,R_oficial,registro
 OpenAI,GPT-6,analitica,candidato documental,evidencia insuficiente sem execucao,nova avaliacao GPT-6 em 05-11-2026,sim,sim,AVALIACAO_GPT6_2026-11-05.md
 OpenAI,GPT-6,execucao,inconclusivo no K-Agent,nao recomendado nesta tentativa,analise de logs resumidos sem execucao propria,sim,sim,AVALIACAO_GPT6_2026-11-05.md
-Anthropic,a confirmar,analitica,,,pendente,sim,sim,
-Anthropic,a confirmar,execucao,,,pendente,sim,sim,
+Anthropic,Claude (variante nao indicada na transcricao),analitica,parcial,parcial,parecer original transcrito sem execucao propria,sim,sim,evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md
+Anthropic,Claude (variante nao indicada na transcricao),execucao,parcial mantido,parcial com risco de nao atribuicao,analise de trechos de logs relatados sem execucao propria,sim,sim,evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md
 Google,Gemini (variante nao indicada no PDF),analitica,atribuido,atribuido,resposta original em PDF,sim,sim,evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md
 Google,Gemini (variante nao indicada no PDF),execucao,atribuido,atribuido com ressalva,analise de logs resumidos fornecidos sem execucao propria,sim,sim,evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md
