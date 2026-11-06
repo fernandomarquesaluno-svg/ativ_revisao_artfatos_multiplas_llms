@@ -2,7 +2,7 @@
 
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
-**Estado: documentação corrigida; experimento com três provedores ainda incompleto.** Não há registros primários suficientes para apresentar a comparação como concluída.
+**Estado: avaliação Gemini documentada; avaliações originais das demais LLMs e experimento completo ainda pendentes.** Não apresentar a comparação como totalmente concluída.
 
 ## Artefato, regras e referência oficial
 
@@ -40,7 +40,7 @@ O README estima cerca de três horas para 50 rodadas da primeira reivindicação
 
 Os materiais anteriores contêm um relato de êxito do random e uma falha de conexão com Ollama. Parte da documentação os chamou de “logs fornecidos no enunciado”, mas o enunciado apresentado nesta revisão não fornece esses logs. A origem, o commit e os arquivos completos precisam ser confirmados. Mantemos os trechos como **registros históricos relatados**, sem classificá-los como novas execuções.
 
-Também foram atribuídos pareceres a GPT, Claude e Gemini sem transcrições suficientes. Esses valores foram retirados da tabela de resultados auditáveis. Nenhuma resposta desses provedores foi simulada nesta revisão.
+Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com Gemini, contendo os dois prompts e as duas respostas. **O Gemini manteve F e R, sendo R com ressalva, após receber trechos de logs resumidos.** Isso contradiz documentos secundários anteriores que afirmavam retirada de R. As avaliações originais de GPT e Claude ainda não foram apresentadas integralmente. Nenhuma resposta foi simulada nesta revisão.
 
 ## Matriz de comparação atual
 
@@ -48,7 +48,7 @@ Também foram atribuídos pareceres a GPT, Claude e Gemini sem transcrições su
 |---|---|---|---|---|
 | ChatGPT/Codex — OpenAI, revisão atual | F: candidato documental; R: condicionado à execução | F e R: não verificados por execução neste ambiente | Sim / Sim | Inspeção E1–E7; pré-checagem local |
 | Claude — Anthropic, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
-| Gemini — Google, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
+| Gemini — Google, modelo exato não indicado no PDF | F: atribuído; R: atribuído (parecer documental) | F: mantido; R: mantido com ressalva; análise dos trechos de logs fornecidos, sem execução própria | Sim / Sim | `evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md` (transcrição PDF da conversa) |
 
 O identificador exato do modelo da sessão atual não foi registrado. A tabela expressa o estado da evidência; não representa seis avaliações concluídas. Não se calcula taxa de concordância com células pendentes.
 
@@ -71,3 +71,8 @@ A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executáv
 7. Validar se o protocolo de execução compartilhada, caso escolhido, atende ao entendimento do professor. O caminho mais direto ao enunciado é uma sessão prática documentada por provedor.
 
 Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo](PROTOCOLO_EXECUCAO.md) e a [planilha CSV](comparacao_llms.csv) estão preparados. Pendências não equivalem a resultados negativos.
+
+
+## Correção fundamentada — resposta original do Gemini (05/11/2026)
+
+A impressão PDF da conversa mostra dois prompts e duas respostas da LLM. **F: atribuído → atribuído. R: atribuído → atribuído com ressalva de execução.** O Gemini considerou que o problema Ollama/porta 11434 poderia ser solucionado ativando `ollama serve` e obtendo `qwen3:0.6b`; a documentação indicava essa etapa. O modelo manteve a recomendação de R, **embora o experimento de 50 rodadas não tenha sido reproduzido nessa tentativa**. Isso é o julgamento do Gemini, não um resultado experimental demonstrado. Consulte [registro da resposta](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md). Até nova evidência, a identidade exata da variante do Gemini não é comprovada pelo texto impresso; o PDF exibe a interface Gemini, mas não seu seletor de modelo.
