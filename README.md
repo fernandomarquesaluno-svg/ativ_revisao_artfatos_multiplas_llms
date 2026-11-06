@@ -2,7 +2,7 @@
 
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
-**Estado: avaliação Gemini documentada; avaliações originais das demais LLMs e experimento completo ainda pendentes.** Não apresentar a comparação como totalmente concluída.
+**Estado: três avaliações documentadas (nova GPT-6, transcrição Claude e transcrição Gemini), porém execução experimental completa e logs integrais ainda pendentes.** A fase prática consiste em análise dos logs resumidos informados; não equivale a três execuções independentes.
 
 ## Artefato, regras e referência oficial
 
@@ -40,17 +40,17 @@ O README estima cerca de três horas para 50 rodadas da primeira reivindicação
 
 Os materiais anteriores contêm um relato de êxito do random e uma falha de conexão com Ollama. Parte da documentação os chamou de “logs fornecidos no enunciado”, mas o enunciado apresentado nesta revisão não fornece esses logs. A origem, o commit e os arquivos completos precisam ser confirmados. Mantemos os trechos como **registros históricos relatados**, sem classificá-los como novas execuções.
 
-Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com Gemini, contendo os dois prompts e as duas respostas. **O Gemini manteve F e R, sendo R com ressalva, após receber trechos de logs resumidos.** Isso contradiz documentos secundários anteriores que afirmavam retirada de R. As avaliações originais de GPT e Claude ainda não foram apresentadas integralmente. Nenhuma resposta foi simulada nesta revisão.
+Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com Gemini, contendo os dois prompts e as duas respostas. **O Gemini manteve F e R, sendo R com ressalva, após receber trechos de logs resumidos.** Isso contradiz documentos secundários anteriores que afirmavam retirada de R. A transcrição original do Claude também foi apresentada em 05/11/2026; a nova avaliação GPT-6 está documentada separadamente. Nenhuma resposta foi simulada nesta revisão.
 
 ## Matriz de comparação atual
 
 | Avaliador / provedor | Analítica F / R | Execução F / R | Oficial F / R | Evidência |
 |---|---|---|---|---|
 | **GPT-6 — OpenAI, nova avaliação de 05/11/2026** | F: candidato documental; R: evidência insuficiente sem execução | F: inconclusivo para K-Agent; R: não recomendado na tentativa relatada | Sim / Sim | [Avaliação nova com ressalvas](AVALIACAO_GPT6_2026-11-05.md); análise de trechos históricos, não execução própria |
-| Claude — Anthropic, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
+| Claude — Anthropic, variante não indicada no texto | F: parcial; R: parcial | F: parcial mantido; R: parcial mantido com risco de não atribuição | Sim / Sim | [Transcrição integral recebida](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md); avaliação dos logs relatados, sem execução própria |
 | Gemini — Google, modelo exato não indicado no PDF | F: atribuído; R: atribuído (parecer documental) | F: mantido; R: mantido com ressalva; análise dos trechos de logs fornecidos, sem execução própria | Sim / Sim | `evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md` (transcrição PDF da conversa) |
 
-A avaliação OpenAI anterior, atribuída a GPT-4o em materiais históricos, foi substituída **na comparação corrente** por uma nova avaliação identificada como GPT-6; não se atribuem respostas antigas ao modelo novo. A tabela expressa o estado da evidência; não representa seis avaliações práticas concluídas. Não se calcula taxa de concordância com células pendentes.
+A avaliação OpenAI anterior, atribuída a GPT-4o em materiais históricos, foi substituída **na comparação corrente** por uma nova avaliação identificada como GPT-6; não se atribuem respostas antigas ao modelo novo. A tabela registra **três avaliações documentais e três reavaliações de logs fornecidos**; não representa três execuções práticas independentes. As interpretações diferem, especialmente quanto a R.
 
 ## Parecer atual da OpenAI
 
@@ -58,7 +58,7 @@ Na inspeção documental, F é plausível porque há um teste mínimo especifica
 
 A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executável Ollama no ambiente de revisão. A tentativa de iniciar `flwr` falhou por executável ausente, antes de carregar o artefato. Nenhum treinamento nem reprodução científica foi realizado aqui. O ambiente não corresponde ao ambiente informado nos materiais históricos.
 
-**Conclusão:** não há base para afirmar consistência ou divergência entre três LLMs. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A tarefa permanece incompleta até reunir as duas etapas por provedor e verificar suas evidências.
+**Conclusão atualizada:** há divergência verificável entre os pareceres textuais: GPT-6 não recomenda R nessa tentativa; Claude mantém classificação analítica “Parcial” com risco de não atribuição; Gemini mantém atribuição de R com ressalva. Nenhuma dessas avaliações demonstra a reprodução da reivindicação principal. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A avaliação permanece limitada pela ausência de logs integrais e execuções independentes.
 
 ## O que falta para concluir
 
@@ -81,3 +81,8 @@ A impressão PDF da conversa mostra dois prompts e duas respostas da LLM. **F: a
 ## Nova avaliação OpenAI com GPT-6 — 05/11/2026
 
 [Registro completo, com análise documental, reavaliação de logs históricos e limites](AVALIACAO_GPT6_2026-11-05.md). Esta avaliação **substitui o GPT-4o apenas na comparação atual**. Parecer documental: F candidato condicionado à prova prática; R documentalmente insuficiente sem reprodução. Após os registros históricos relatados: F inconclusivo para o núcleo K-Agent, apesar do teste random; R não recomendado **nessa tentativa** porque o experimento foi abortado. Nenhuma execução independente do K-Agent ocorreu nesta avaliação GPT-6. Os materiais antigos com GPT-4o permanecem como histórico.
+
+
+## Avaliação original Claude — 05/11/2026
+
+O aluno forneceu a [transcrição completa dos dois prompts e duas respostas](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md). **Documento: F=Parcial e R=Parcial; após os logs resumidos: F=Parcial mantido e R=Parcial mantido, com risco de rebaixamento.** Portanto, é falso que Claude tenha “negado R definitivamente” nos registros originais apresentados. “Parcial” é terminologia do parecer, não selo oficial. A versão exata do modelo Claude não aparece na transcrição. A inspeção do commit referenciado confirma três observações do Claude: caminho do script Ollama diferente do indicado no README, duas entradas `num-supernodes` no TOML e notebook com caminho absoluto para pasta do autor. As hipóteses causais do Claude sobre a conexão Ollama não constituem comprovação da causa efetiva do erro.
