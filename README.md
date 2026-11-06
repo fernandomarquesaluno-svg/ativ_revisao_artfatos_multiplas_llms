@@ -46,11 +46,11 @@ Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com 
 
 | Avaliador / provedor | Analítica F / R | Execução F / R | Oficial F / R | Evidência |
 |---|---|---|---|---|
-| ChatGPT/Codex — OpenAI, revisão atual | F: candidato documental; R: condicionado à execução | F e R: não verificados por execução neste ambiente | Sim / Sim | Inspeção E1–E7; pré-checagem local |
+| **GPT-6 — OpenAI, nova avaliação de 05/11/2026** | F: candidato documental; R: evidência insuficiente sem execução | F: inconclusivo para K-Agent; R: não recomendado na tentativa relatada | Sim / Sim | [Avaliação nova com ressalvas](AVALIACAO_GPT6_2026-11-05.md); análise de trechos históricos, não execução própria |
 | Claude — Anthropic, versão a confirmar | Pendente de resposta original | Pendente de execução ou uso documentado | Sim / Sim | Conversas e logs não localizados |
 | Gemini — Google, modelo exato não indicado no PDF | F: atribuído; R: atribuído (parecer documental) | F: mantido; R: mantido com ressalva; análise dos trechos de logs fornecidos, sem execução própria | Sim / Sim | `evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md` (transcrição PDF da conversa) |
 
-O identificador exato do modelo da sessão atual não foi registrado. A tabela expressa o estado da evidência; não representa seis avaliações concluídas. Não se calcula taxa de concordância com células pendentes.
+A avaliação OpenAI anterior, atribuída a GPT-4o em materiais históricos, foi substituída **na comparação corrente** por uma nova avaliação identificada como GPT-6; não se atribuem respostas antigas ao modelo novo. A tabela expressa o estado da evidência; não representa seis avaliações práticas concluídas. Não se calcula taxa de concordância com células pendentes.
 
 ## Parecer atual da OpenAI
 
@@ -76,3 +76,8 @@ Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo
 ## Correção fundamentada — resposta original do Gemini (05/11/2026)
 
 A impressão PDF da conversa mostra dois prompts e duas respostas da LLM. **F: atribuído → atribuído. R: atribuído → atribuído com ressalva de execução.** O Gemini considerou que o problema Ollama/porta 11434 poderia ser solucionado ativando `ollama serve` e obtendo `qwen3:0.6b`; a documentação indicava essa etapa. O modelo manteve a recomendação de R, **embora o experimento de 50 rodadas não tenha sido reproduzido nessa tentativa**. Isso é o julgamento do Gemini, não um resultado experimental demonstrado. Consulte [registro da resposta](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md). Até nova evidência, a identidade exata da variante do Gemini não é comprovada pelo texto impresso; o PDF exibe a interface Gemini, mas não seu seletor de modelo.
+
+
+## Nova avaliação OpenAI com GPT-6 — 05/11/2026
+
+[Registro completo, com análise documental, reavaliação de logs históricos e limites](AVALIACAO_GPT6_2026-11-05.md). Esta avaliação **substitui o GPT-4o apenas na comparação atual**. Parecer documental: F candidato condicionado à prova prática; R documentalmente insuficiente sem reprodução. Após os registros históricos relatados: F inconclusivo para o núcleo K-Agent, apesar do teste random; R não recomendado **nessa tentativa** porque o experimento foi abortado. Nenhuma execução independente do K-Agent ocorreu nesta avaliação GPT-6. Os materiais antigos com GPT-4o permanecem como histórico.
