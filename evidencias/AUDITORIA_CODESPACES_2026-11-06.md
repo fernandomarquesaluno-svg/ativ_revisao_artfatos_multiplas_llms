@@ -1,3 +1,7 @@
+> **ATUALIZAÇÃO POSTERIOR (06/11/2026):** o aluno executou e enviou novo pacote com **duas rodadas**. Esse novo teste **confirmou a seleção pelo K-Agent/LLM** e chamadas de inferência ao Ollama. Leia a [auditoria posterior](AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md). A auditoria abaixo permanece válida para os **três pacotes anteriores de uma rodada**, mas a pendência funcional foi superada na nova execução. A reprodução científica de 50 rodadas continua pendente.
+
+---
+
 # Auditoria dos logs originais do GitHub Codespaces — 06/11/2026
 
 ## Escopo e origem
