@@ -1,8 +1,8 @@
-# Prompts padronizados para coleta
+# Prompts para possível replicação controlada — versão aprimorada
 
-**Estado:** **protocolo padronizado prospectivo**, preparado para uma eventual replicação controlada. Estes textos **não foram aplicados literalmente e de modo idêntico às três LLMs** nas conversas originais. As interações históricas de Claude e Gemini e a nova avaliação de GPT-6 estão registradas em arquivos separados. Não apresentar os prompts abaixo como transcrições antigas nem alegar controle experimental inexistente.
+**Conferência histórica (06/11/2026):** os **mesmos dois prompts originais** foram enviados a GPT-6, Claude e Gemini. As mensagens registradas de GPT-6 e Claude são textualmente idênticas e a impressão do Gemini contém o mesmo enunciado, com formatação diferente. Consulte [GPT-6](evidencias/GPT6_TRANSCRICAO_ORIGINAL_2026-11-06.md), [Claude](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md) e [Gemini](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md).
 
-**O que foi efetivamente documentado:** três avaliações documentais e três reavaliações feitas com resumos de execução fornecidos pelo aluno. Os prompts e materiais das sessões podem diferir. Para rastreabilidade consulte [Claude](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md), [Gemini](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md) e [GPT-6](AVALIACAO_GPT6_2026-11-05.md).
+**Atenção:** os prompts descritos abaixo são uma proposta **mais rigorosa para eventual nova avaliação controlada**, e **não** a transcrição dos prompts históricos. A igualdade dos prompts históricos foi confirmada, mas não há comprovação de snapshots exatos do repositório/materiais iguais nem três execuções independentes do código.
 
 ## Materiais comuns
 
