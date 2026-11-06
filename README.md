@@ -1,5 +1,6 @@
 # Atividade 7 — Avaliação de artefatos com três LLMs
 
+> **Entrega final da Atividade 7 (06/11/2026):** [Conferência definitiva, evidências e limites metodológicos](ENTREGA_FINAL_ATIVIDADE_7_2026-11-06.md). A seleção K-Agent/Ollama foi demonstrada em duas rodadas; a reprodução científica das 50 rodadas permanece não demonstrada.\n\n
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
 **Estado: três avaliações documentadas; novas execuções com logs integrais, incluindo seleção K-Agent/LLM comprovada em duas rodadas. A reprodução científica de 50 rodadas ainda não foi demonstrada.** As reavaliações históricas das LLMs consideraram logs antigos resumidos, e não os novos logs do Codespaces.
