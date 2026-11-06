@@ -1,0 +1,21 @@
+{
+  "name": "Atividade 7 - K-Agent (Ubuntu 22.04)",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "postCreateCommand": "echo 'Ambiente pronto. Abra o terminal e execute: bash scripts/codespaces/run_tests.sh'",
+  "forwardPorts": [
+    11434
+  ],
+  "portsAttributes": {
+    "11434": {
+      "label": "Ollama local",
+      "onAutoForward": "ignore"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}
