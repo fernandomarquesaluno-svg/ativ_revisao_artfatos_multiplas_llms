@@ -13,6 +13,6 @@ flowchart TD
  G --> H["Limitações: logs integrais indisponíveis / sem reprodução completa"]
 ```
 
-**Limitações metodológicas essenciais:** não está demonstrado que todos receberam prompts idênticos ou o mesmo snapshot de documentação; as respostas de Claude e Gemini são históricas; GPT-6 é avaliação nova. A fase prática se limitou ao exame de trechos de execução informados pelo aluno, sem execução independente por modelo. Sem acesso à máquina Ubuntu, não há como autenticar logs originais nem refazer a comparação das métricas do artigo.
+**Limitações metodológicas essenciais:** os **dois prompts históricos foram iguais** nas três LLMs. Porém, não há comprovação de que o mesmo snapshot de documentação foi disponibilizado ou consultado por todas. As três avaliações são registros documentais; a segunda etapa analisou fragmentos de execução relatados, sem execuções independentes. A fase prática se limitou ao exame de trechos de execução informados pelo aluno, sem execução independente por modelo. Sem acesso à máquina Ubuntu, não há como autenticar logs originais nem refazer a comparação das métricas do artigo.
 
 **Protocolo prospectivo mais rigoroso:** para repetir um estudo controlado, usar o mesmo [prompt padronizado proposto](PROMPTS_UTILIZADOS.md), mesmos materiais/versionamento, e sessões práticas distintas com stdout/stderr e ambiente preservados.
