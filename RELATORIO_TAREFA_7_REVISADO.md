@@ -2,7 +2,7 @@
 
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026 — consolidada após transcrição Claude
 
-**Estado: três avaliações documentadas; novas execuções básicas no Codespaces auditadas com logs integrais. A seleção pelo agente/LLM e a reprodução científica completa ainda não foram demonstradas.** As reavaliações históricas das LLMs consideraram logs antigos resumidos, e não os novos logs do Codespaces.
+**Estado: três avaliações documentadas; novas execuções com logs integrais, incluindo seleção K-Agent/LLM comprovada em duas rodadas. A reprodução científica de 50 rodadas ainda não foi demonstrada.** As reavaliações históricas das LLMs consideraram logs antigos resumidos, e não os novos logs do Codespaces.
 
 ## Artefato, regras e referência oficial
 
@@ -108,6 +108,18 @@ Confrontados os textos da transcrição GPT-6, da transcrição Claude e da impr
 - **Ollama:** `qwen3:0.6b` foi baixado na terceira tentativa, com serviço disponível e resposta `HTTP 200` para consultas de estado.
 - **Configuração nominal K-Agent:** a terceira tentativa terminou uma rodada (`exit_code=0`) e salvou um modelo com nome `k-agent`.
 - **Limite identificado no código:** [`selection_agent_strategy.py`](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/selection_agent/agent/selection_agent_strategy.py) só chama `self.selection_method.sample_clients` quando `server_round > 1`. Logo, uma única rodada **não executa a seleção pelo K-Agent/LLM**, apesar da configuração e saída bem-sucedida. O log do Ollama confirma apenas consultas de estado e download, não chamadas de inferência.
-- **Próximo teste para demonstrar a funcionalidade específica:** [script K-Agent de duas rodadas](scripts/codespaces/run_kagent_2rounds.sh), usando timeout e preservação de logs. **Ainda não executado.**
+- **Próximo teste para demonstrar a funcionalidade específica:** [script K-Agent de duas rodadas](scripts/codespaces/run_kagent_2rounds.sh), usando timeout e preservação de logs. **Executado em 06/11/2026 e auditado.**
 
 As novas tentativas de 06/11/2026 ocorreram **depois das avaliações textuais originais de GPT-6, Claude e Gemini**. Não atribuir aos modelos um novo parecer sobre esses logs sem realmente submetê-los a eles. Os pareceres históricos F/R permanecem inalterados. O resultado científico de redução de tráfego de 44,4%–59% **ainda não foi reproduzido**.
+
+
+## Validação concluída: K-Agent em duas rodadas (06/11/2026)
+
+**Novo resultado comprovado com logs originais:** [Auditoria de duas rodadas](evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md). O pacote `evidencias_kagent_2rodadas_20261106T111254Z.tar.gz` foi recebido e auditado; SHA-256 `d5667dd68c7c596f25d12e7810a3f43c336ab97dce0274857c62a4eeceee5e41`. No commit `949f83c6db86d682240b7a61d1d2d406609413b6`, Python 3.10.12, Flower 1.23.0, CPU, cinco clientes e duas rodadas, os logs mostram:
+
+- `[ROUND 2/2]`, `Selection tries (K-Agent): 1`, `Agente selecionou com sucesso.` e execução encerrada sem erro (`exit_code=0`).
+- Duas respostas HTTP 200 a `POST /api/chat` do Ollama; modelo `qwen3:0.6b` acionado.
+- JSON de resultados confirma `tool_calls: oort_selection({"k":1})`, `status="success"`, seleção de um cliente e treino com um resultado recebido sem falhas.
+- Arquivo de modelo e JSON de resultados preservados no pacote. 
+
+**Veredito:** a funcionalidade específica de seleção com LLM **foi demonstrada no teste reduzido**. A reprodução de 50 rodadas e redução de tráfego de 44,4%–59% **continua não demonstrada**. Os pareceres históricos das três LLMs continuam referidos aos logs antigos que receberam, não a esses logs novos. O pacote binário não foi enviado ao GitHub; a auditoria inclui seu hash e referências internas.
