@@ -3,5 +3,5 @@ OpenAI,ChatGPT/Codex,analitica,candidato documental,condicionado a execucao,insp
 OpenAI,ChatGPT/Codex,execucao,,,bloqueada antes de iniciar artefato,sim,sim,evidencias/prechecagem_2026-11-05.json
 Anthropic,a confirmar,analitica,,,pendente,sim,sim,
 Anthropic,a confirmar,execucao,,,pendente,sim,sim,
-Google,a confirmar,analitica,,,pendente,sim,sim,
-Google,a confirmar,execucao,,,pendente,sim,sim,
+Google,Gemini (variante nao indicada no PDF),analitica,atribuido,atribuido,resposta original em PDF,sim,sim,evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md
+Google,Gemini (variante nao indicada no PDF),execucao,atribuido,atribuido com ressalva,analise de logs resumidos fornecidos sem execucao propria,sim,sim,evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md
