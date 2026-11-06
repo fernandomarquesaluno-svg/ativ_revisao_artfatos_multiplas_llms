@@ -79,6 +79,8 @@ RANDOM_EXIT=$?
 set -e
 printf 'exit_code=%s\n' "$RANDOM_EXIT" > "$LOGS/random_exit_status.txt"
 find "$SOURCE/selection-agent/models" -maxdepth 1 -type f -printf '%p %s bytes\n' > "$LOGS/modelos_random.txt" 2>/dev/null || true
+mkdir -p "$LOGS/modelos_random"
+find "$SOURCE/selection-agent/models" -maxdepth 1 -type f -name "*.pt" -size -100M -exec cp -n {} "$LOGS/modelos_random/" \; 2>/dev/null || true
 echo "Resultado Random, código de saída: $RANDOM_EXIT"
 
 echo "=== TESTE B: preparar Ollama + qwen3:0.6b ==="
@@ -132,6 +134,8 @@ KAGENT_EXIT=$?
 set -e
 printf 'exit_code=%s\n' "$KAGENT_EXIT" > "$LOGS/kagent_exit_status.txt"
 find "$SOURCE/selection-agent/models" -maxdepth 1 -type f -printf '%p %s bytes\n' > "$LOGS/modelos_kagent.txt" 2>/dev/null || true
+mkdir -p "$LOGS/modelos_kagent"
+find "$SOURCE/selection-agent/models" -maxdepth 1 -type f -name "*.pt" -size -100M -exec cp -n {} "$LOGS/modelos_kagent/" \; 2>/dev/null || true
 
 echo "=== CONCLUSÃO DA NOVA TENTATIVA ==="
 echo "Random: exit_code=$RANDOM_EXIT"
