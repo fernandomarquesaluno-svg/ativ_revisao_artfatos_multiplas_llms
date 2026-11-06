@@ -40,7 +40,7 @@ df -h "$ROOT" >> "$LOGS/ambiente.txt"
 
 echo "=== Instalando pré-requisitos do Ubuntu 22.04 ==="
 sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.10 python3.10-venv python3-pip git curl ca-certificates
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python3.10 python3.10-venv python3-pip git curl ca-certificates zstd
 python3.10 --version | tee -a "$LOGS/ambiente.txt"
 
 echo "=== Obtendo código dos autores e fixando commit ==="
