@@ -4,6 +4,17 @@ Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
 **Estado: três avaliações documentadas (transcrição original GPT-6, transcrição Claude e transcrição Gemini), porém execução experimental completa e logs integrais ainda pendentes.** A fase prática consiste em análise dos logs resumidos informados; não equivale a três execuções independentes.
 
+## Executar sem instalar Ubuntu (GitHub Codespaces)
+
+**[Abrir o Codespaces da Atividade 7](https://codespaces.new/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms)** — configuração Ubuntu 22.04 e testes reduzidos preparados. Depois de criar o ambiente no navegador, execute no terminal:
+
+```bash
+bash scripts/codespaces/run_tests.sh
+```
+
+O script salva novas evidências em `evidencias_codespaces_<data>.tar.gz`, para baixar e anexar à entrega. **Ainda não foi executado num Codespace.** Os resultados novos não substituem ou autenticam logs antigos. Consulte o [guia completo](CODESPACES_EXECUCAO.md). A criação do Codespace e o uso de recursos da conta dependem de autorização na interface do GitHub.
+
+
 ## Artefato, regras e referência oficial
 
 - Artefato: [Selection Agent / K-Agent](https://github.com/rafaeloj/sbrc2026).
