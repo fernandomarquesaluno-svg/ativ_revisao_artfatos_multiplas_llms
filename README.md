@@ -2,7 +2,7 @@
 
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026
 
-**Estado: três avaliações documentadas (nova GPT-6, transcrição Claude e transcrição Gemini), porém execução experimental completa e logs integrais ainda pendentes.** A fase prática consiste em análise dos logs resumidos informados; não equivale a três execuções independentes.
+**Estado: três avaliações documentadas (transcrição original GPT-6, transcrição Claude e transcrição Gemini), porém execução experimental completa e logs integrais ainda pendentes.** A fase prática consiste em análise dos logs resumidos informados; não equivale a três execuções independentes.
 
 ## Artefato, regras e referência oficial
 
@@ -46,19 +46,19 @@ Em 05/11/2026 o aluno apresentou uma impressão em PDF da conversa original com 
 
 | Avaliador / provedor | Analítica F / R | Execução F / R | Oficial F / R | Evidência |
 |---|---|---|---|---|
-| **GPT-6 — OpenAI, nova avaliação de 05/11/2026** | F: candidato documental; R: evidência insuficiente sem execução | F: inconclusivo para K-Agent; R: não recomendado na tentativa relatada | Sim / Sim | [Avaliação nova com ressalvas](AVALIACAO_GPT6_2026-11-05.md); análise de trechos históricos, não execução própria |
+| **GPT-6 — OpenAI, conversa original fornecida em 06/11/2026** | F: atribuído com ressalvas; R: parcial | F: parcial; R: parcial mantido | Sim / Sim | [Transcrição integral](evidencias/GPT6_TRANSCRICAO_ORIGINAL_2026-11-06.md); reavaliação de logs resumidos, sem execução própria |
 | Claude — Anthropic, variante não indicada no texto | F: parcial; R: parcial | F: parcial mantido; R: parcial mantido com risco de não atribuição | Sim / Sim | [Transcrição integral recebida](evidencias/CLAUDE_TRANSCRICAO_2026-11-05.md); avaliação dos logs relatados, sem execução própria |
 | Gemini — Google, modelo exato não indicado no PDF | F: atribuído; R: atribuído (parecer documental) | F: mantido; R: mantido com ressalva; análise dos trechos de logs fornecidos, sem execução própria | Sim / Sim | `evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md` (transcrição PDF da conversa) |
 
-A avaliação OpenAI anterior, atribuída a GPT-4o em materiais históricos, foi substituída **na comparação corrente** por uma nova avaliação identificada como GPT-6; não se atribuem respostas antigas ao modelo novo. A tabela registra **três avaliações documentais e três reavaliações de logs fornecidos**; não representa três execuções práticas independentes. As interpretações diferem, especialmente quanto a R.
+A avaliação histórica atribuída a GPT-4o foi substituída na comparação corrente pela **conversa original fornecida pelo aluno para GPT-6**. A análise GPT-6 adicional elaborada anteriormente nesta revisão está preservada como documento histórico separado e **não deve ser usada na tabela principal**. A tabela registra **três avaliações documentais e três reavaliações de logs fornecidos**; não representa três execuções práticas independentes. As interpretações diferem, especialmente quanto a R.
 
-## Parecer atual da OpenAI
+## Parecer efetivamente registrado na conversa GPT-6
 
-Na inspeção documental, F é plausível porque há um teste mínimo especificado. R tem roteiro, mas depende de configurar e executar as reivindicações. Os trechos históricos, se confirmados, sustentariam a execução de uma funcionalidade básica e a interrupção do experimento principal. Sua autenticidade e completude ainda não foram verificadas.
+**Documental:** F atribuído com ressalvas; R parcial. **Após receber os fragmentos de logs:** F parcial; R parcial mantido. A justificativa é que Random concluiu uma rodada conforme relato, enquanto o K-Agent não concluiu o experimento porque a conexão com Ollama foi recusada. [Transcrição textual integral](evidencias/GPT6_TRANSCRICAO_ORIGINAL_2026-11-06.md).
 
-A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executável Ollama no ambiente de revisão. A tentativa de iniciar `flwr` falhou por executável ausente, antes de carregar o artefato. Nenhum treinamento nem reprodução científica foi realizado aqui. O ambiente não corresponde ao ambiente informado nos materiais históricos.
+A pré-checagem técnica de 05/11/2026, realizada em outro ambiente de revisão, não tinha Flower/Ollama instalados e não constitui execução da sessão histórica.
 
-**Conclusão atualizada:** há divergência verificável entre os pareceres textuais: GPT-6 não recomenda R nessa tentativa; Claude mantém classificação analítica “Parcial” com risco de não atribuição; Gemini mantém atribuição de R com ressalva. Nenhuma dessas avaliações demonstra a reprodução da reivindicação principal. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A avaliação permanece limitada pela ausência de logs integrais e execuções independentes.
+**Conclusão atualizada:** há divergência verificável entre os pareceres textuais: GPT-6 mantém R como **Parcial**; Claude mantém R como **Parcial** com risco de não atribuição; Gemini mantém **Atribuído** com ressalva. Nenhuma dessas avaliações demonstra a reprodução da reivindicação principal. A falha relatada não invalida os selos oficiais e não demonstra erro do algoritmo. A avaliação permanece limitada pela ausência de logs integrais e execuções independentes.
 
 ## Estado da entrega e pendências
 
@@ -66,7 +66,7 @@ A pré-checagem de 05/11/2026 encontrou ausência de Flower, PyTorch e executáv
 
 **Permanece pendente para demonstrar um experimento de execução plenamente auditável:** recuperar/reexecutar no Ubuntu um ambiente com configurações, logs completos, outputs, métricas e resultados das reivindicações; confirmar variantes dos modelos Claude/Gemini; realizar, se exigido, uma repetição controlada com prompts e snapshots idênticos. Sem isso, não afirmar conclusão de três execuções práticas ou reprodução do K-Agent.
 
-**Divergência metodológica:** os prompts originais recebidos de Claude e Gemini e a nova avaliação GPT-6 não têm identidade literal comprovada. A [padronização proposta](PROMPTS_UTILIZADOS.md) é recomendação para nova rodada, não descrição retroativa de um controle que não ocorreu.
+**Padronização dos prompts históricos:** o Prompt 1 e o Prompt 2 são **literalmente idênticos** nas transcrições fornecidas de Claude e GPT-6; a impressão PDF do Gemini contém os mesmos enunciados com mudanças de diagramação. A identidade dos prompts não comprova, por si só, que os três modelos consultaram o mesmo snapshot do repositório ou acessaram exatamente os mesmos materiais. Os prompts de [replicação prospectiva](PROMPTS_UTILIZADOS.md) são versões mais exigentes e distintas dos prompts históricos.
 
 Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo](PROTOCOLO_EXECUCAO.md) e a [planilha CSV](comparacao_llms.csv) estão preparados. Pendências não equivalem a resultados negativos.
 
@@ -76,10 +76,9 @@ Os [prompts](PROMPTS_UTILIZADOS.md), o [fluxograma](FLUXOGRAMA.md), o [protocolo
 A impressão PDF da conversa mostra dois prompts e duas respostas da LLM. **F: atribuído → atribuído. R: atribuído → atribuído com ressalva de execução.** O Gemini considerou que o problema Ollama/porta 11434 poderia ser solucionado ativando `ollama serve` e obtendo `qwen3:0.6b`; a documentação indicava essa etapa. O modelo manteve a recomendação de R, **embora o experimento de 50 rodadas não tenha sido reproduzido nessa tentativa**. Isso é o julgamento do Gemini, não um resultado experimental demonstrado. Consulte [registro da resposta](evidencias/GEMINI_AVALIACAO_ORIGINAL_2026-11-05.md). Até nova evidência, a identidade exata da variante do Gemini não é comprovada pelo texto impresso; o PDF exibe a interface Gemini, mas não seu seletor de modelo.
 
 
-## Nova avaliação OpenAI com GPT-6 — 05/11/2026
+## Avaliação GPT-6 da conversa original — 06/11/2026
 
-[Registro completo, com análise documental, reavaliação de logs históricos e limites](AVALIACAO_GPT6_2026-11-05.md). Esta avaliação **substitui o GPT-4o apenas na comparação atual**. Parecer documental: F candidato condicionado à prova prática; R documentalmente insuficiente sem reprodução. Após os registros históricos relatados: F inconclusivo para o núcleo K-Agent, apesar do teste random; R não recomendado **nessa tentativa** porque o experimento foi abortado. Nenhuma execução independente do K-Agent ocorreu nesta avaliação GPT-6. Os materiais antigos com GPT-4o permanecem como histórico.
-
+A [transcrição integral](evidencias/GPT6_TRANSCRICAO_ORIGINAL_2026-11-06.md) contém os dois prompts históricos e as duas respostas. **F: Atribuído → Parcial. R: Parcial → Parcial, mantido**. O arquivo [AVALIACAO_GPT6_2026-11-05.md](AVALIACAO_GPT6_2026-11-05.md) permanece como **uma avaliação adicional posterior, fora da amostra comparativa**; seu parecer não deve substituir a resposta da conversa original.
 
 ## Avaliação original Claude — 05/11/2026
 
@@ -94,3 +93,8 @@ O aluno confirmou não ter mais acesso à máquina Ubuntu em que relatou as duas
 ## Apresentação final revisada
 
 [Conteúdo auditável dos nove slides, com referências](APRESENTACAO_FINAL_9_SLIDES.md). A apresentação editável PowerPoint e a versão PDF foram geradas e revisadas visualmente na conversa de 05/11/2026. Por limitação do conector de GitHub para arquivos binários neste fluxo, o repositório contém **o conteúdo textual completo** da apresentação, não os arquivos PPTX/PDF.
+
+
+## Conferência final dos prompts históricos — 06/11/2026
+
+Confrontados os textos da transcrição GPT-6, da transcrição Claude e da impressão PDF Gemini: **os dois prompts utilizados apresentam o mesmo conteúdo**. O confronto byte a byte das mensagens exportadas de GPT-6 e Claude, removida apenas a indicação da interface, foi **idêntico nos dois prompts**. O PDF Gemini altera a diagramação, sem mudar o enunciado. Portanto, **não se deve mais alegar ausência de padronização dos prompts**. A comparabilidade continua limitada por variantes exatas dos modelos, possíveis snapshots/materiais acessados e falta de logs integrais. [Apresentação corrigida](APRESENTACAO_FINAL_9_SLIDES.md).
