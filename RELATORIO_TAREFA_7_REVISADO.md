@@ -2,7 +2,7 @@
 
 Fernando Henrique de Souza Marques · Revisão de 05/11/2026 — consolidada após transcrição Claude
 
-**Estado: três avaliações documentadas (transcrição original GPT-6, transcrição Claude e transcrição Gemini), porém execução experimental completa e logs integrais ainda pendentes.** A fase prática consiste em análise dos logs resumidos informados; não equivale a três execuções independentes.
+**Estado: três avaliações documentadas; novas execuções básicas no Codespaces auditadas com logs integrais. A seleção pelo agente/LLM e a reprodução científica completa ainda não foram demonstradas.** As reavaliações históricas das LLMs consideraram logs antigos resumidos, e não os novos logs do Codespaces.
 
 ## Artefato, regras e referência oficial
 
@@ -98,3 +98,16 @@ O aluno confirmou não ter mais acesso à máquina Ubuntu em que relatou as duas
 ## Conferência final dos prompts históricos — 06/11/2026
 
 Confrontados os textos da transcrição GPT-6, da transcrição Claude e da impressão PDF Gemini: **os dois prompts utilizados apresentam o mesmo conteúdo**. O confronto byte a byte das mensagens exportadas de GPT-6 e Claude, removida apenas a indicação da interface, foi **idêntico nos dois prompts**. O PDF Gemini altera a diagramação, sem mudar o enunciado. Portanto, **não se deve mais alegar ausência de padronização dos prompts**. A comparabilidade continua limitada por variantes exatas dos modelos, possíveis snapshots/materiais acessados e falta de logs integrais. [Apresentação corrigida](APRESENTACAO_FINAL_9_SLIDES.md).
+
+
+## Auditoria real dos logs do Codespaces — 06/11/2026
+
+**Novas evidências verificadas diretamente:** o aluno enviou três pacotes `.tar.gz` contendo stdout/stderr, códigos de saída, commit, versões, TOML e modelos gerados. O relatório de validação de integridade e resultados está em [Auditoria do Codespaces](evidencias/AUDITORIA_CODESPACES_2026-11-06.md). Isso **supre a falta de logs integrais dos testes novos**, mas não recupera os logs antigos do Ubuntu e não demonstra a reprodução das 50 rodadas.
+
+- **Random:** três execuções com uma rodada e `exit_code=0`; logs incluem agregação de cinco resultados de treinamento sem falhas e arquivos de modelo salvos.
+- **Ollama:** `qwen3:0.6b` foi baixado na terceira tentativa, com serviço disponível e resposta `HTTP 200` para consultas de estado.
+- **Configuração nominal K-Agent:** a terceira tentativa terminou uma rodada (`exit_code=0`) e salvou um modelo com nome `k-agent`.
+- **Limite identificado no código:** [`selection_agent_strategy.py`](https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/selection_agent/agent/selection_agent_strategy.py) só chama `self.selection_method.sample_clients` quando `server_round > 1`. Logo, uma única rodada **não executa a seleção pelo K-Agent/LLM**, apesar da configuração e saída bem-sucedida. O log do Ollama confirma apenas consultas de estado e download, não chamadas de inferência.
+- **Próximo teste para demonstrar a funcionalidade específica:** [script K-Agent de duas rodadas](scripts/codespaces/run_kagent_2rounds.sh), usando timeout e preservação de logs. **Ainda não executado.**
+
+As novas tentativas de 06/11/2026 ocorreram **depois das avaliações textuais originais de GPT-6, Claude e Gemini**. Não atribuir aos modelos um novo parecer sobre esses logs sem realmente submetê-los a eles. Os pareceres históricos F/R permanecem inalterados. O resultado científico de redução de tráfego de 44,4%–59% **ainda não foi reproduzido**.
