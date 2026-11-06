@@ -62,7 +62,15 @@ python -m pip freeze > "$OUT/pip_freeze.txt"
 flwr --version > "$OUT/flower_version.txt" 2>&1 || true
 
 if ! command -v ollama >/dev/null 2>&1; then
-  echo "Ollama ausente; execute os testes de preparação primeiro."
+  echo "Ollama ausente: instalando zstd (se necessário) e Ollama..."
+  if ! command -v zstd >/dev/null 2>&1; then
+    sudo apt-get update
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y zstd
+  fi
+  curl -fsSL https://ollama.com/install.sh | sh
+fi
+if ! command -v ollama >/dev/null 2>&1; then
+  echo "Ollama continua ausente após tentativa de instalação."
   exit 5
 fi
 ollama --version > "$OUT/ollama_version.txt" 2>&1 || true
