@@ -1,6 +1,6 @@
 # Atividade 7 — Encerramento e instruções de entrega (06/11/2026)
 
-**Situação:** relatório, comparação multimodelo, evidências de execução e apresentação **prontos para entrega acadêmica com ressalva experimental**.
+**Situação (auditoria do enunciado de 14 itens):** relatório, comparação multimodelo, evidências de execução e apresentação **prontos para entrega acadêmica com ressalva experimental**. [Checklist item a item](CHECKLIST_CONFORMIDADE_TAREFA7_2026-11-06.md). O enunciado da Tarefa 7 **não exige literalmente 50 rodadas**; elas fazem parte do teste científico das principais reivindicações dos autores (selo R). Não alegar que R foi reproduzido.
 
 ## 1. Checklist de conformidade
 
@@ -52,3 +52,15 @@ O quarto pacote, `evidencias_kagent_2rodadas_20261106T111254Z.tar.gz`, confirma,
 - O pacote de entrega final contendo PDF/PPTX/CSV e os quatro arquivos originais de evidências está disponível como anexo nesta conversa; os binários não foram enviados a este repositório.
 
 **Veredito final:** **Atividade 7 encerrada para fins de entrega e apresentação, com ressalva metodológica explícita quanto ao selo R.** A submissão oficial deve ser confirmada pelo aluno.
+
+
+## 5. Correções finais de conformidade (06/11/2026)
+
+1. **Exigência de 50 rodadas:** não existe essa contagem no enunciado da disciplina; a referência a 50 rodadas decorre do experimento principal do artigo. A ausência da execução completa limita o juízo técnico sobre a reprodutibilidade científica, mas não implica descumprimento automático da avaliação por execução solicitada na disciplina.
+2. **Prova de instruções oficiais por modelo:** os prompts históricos citam a edição SBRC 2026; existe [cópia preservada das regras](evidencias/INSTRUCOES_SBRC2026.txt), mas não comprovação de que todos os modelos efetivamente acessaram a íntegra ou o mesmo snapshot. **Não descrever esse ponto como plenamente verificado.**
+3. **Avaliação por execução:** a segunda etapa das três LLMs foi análise de logs resumidos, não execução própria. Os testes de Random e K-Agent com Qwen3 foram realizados pelo aluno posteriormente no Codespaces, com prova documental auditada.
+4. **Verificação das evidências:** a função central do K-Agent foi verificada diretamente em duas rodadas, mas não há auditoria direta de cada alegação feita nos pareceres das LLMs. Conservar essa ressalva.
+5. **Fluxograma corrigido:** [FLUXOGRAMA.md](FLUXOGRAMA.md) agora separa corretamente histórico das LLMs e prática posterior.
+6. **Conclusão:** atividade pronta para apresentação e entrega com limitações explícitas; não alegar resultado de 50 rodadas, redução de 44,4%–59% ou alteração dos selos oficiais.
+
+Os arquivos PDF/PPTX atualizados foram criados como anexos desta conversa e podem ser enviados à plataforma da disciplina pelo aluno. A atualização dos binários no próprio GitHub não foi realizada por este fluxo.
