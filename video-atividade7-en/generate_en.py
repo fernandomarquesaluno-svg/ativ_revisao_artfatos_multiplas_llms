@@ -17,7 +17,7 @@ pipe=KPipeline(lang_code="a",device="cpu")
 RATE=24000
 for n,scene in enumerate(scenes,1):
     print(f"English narration scene {n}/{len(scenes)}",flush=True)
-    sentences=[p.strip() for p in re.split(r"(?<=[.!?])\\s+",scene) if p.strip()]
+    sentences=[p.strip() for p in re.split(r"(?<=[.!?])\s+",scene) if p.strip()]
     samples=[]
     for sentence in sentences:
         for graphemes,phonemes,audio in pipe(sentence,voice="am_michael",speed=0.98):
