@@ -19,7 +19,7 @@ scenes=json.loads((ROOT/"cenas.json").read_text(encoding="utf-8"))
 pipeline=KPipeline(lang_code="p",device="cpu")
 SAMPLE_RATE=24000
 
-for n, scene in enumerate(scenes, 1):
+for n, scene in enumerate(scenes[:1], 1):
     print(f"Narrando slide {n:02}/{len(scenes)} com voz neural brasileira Alex", flush=True)
     sentences=[x.strip() for x in re.split(r'(?<=[.!?])\s+', scene) if x.strip()]
     samples=[]
@@ -38,4 +38,4 @@ for n, scene in enumerate(scenes, 1):
     assert len(out)>SAMPLE_RATE*8
     sf.write(DEST/f"slide_{n:02}.wav",out,SAMPLE_RATE,subtype="PCM_16")
     print("Duração:",round(len(out)/SAMPLE_RATE,2),"s",flush=True)
-print("9 slides sintetizados em PT-BR, sem serviços pagos",flush=True)
+print("Slide de abertura atualizado em PT-BR",flush=True)
