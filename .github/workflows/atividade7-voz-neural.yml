@@ -1,0 +1,30 @@
+name: Atividade 7 - voz neural brasileira gratuita
+on:
+  push:
+    branches:
+      - video-atividade7-voz-neural-20261109
+    paths:
+      - '.github/workflows/atividade7-voz-neural.yml'
+      - 'video-atividade7/**'
+  workflow_dispatch:
+jobs:
+  narracao:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Preparar gerador neural
+        run: python -m pip install edge-tts==7.2.7
+      - name: Gerar narracao portuguesa
+        run: python video-atividade7/gerar_voz.py
+      - name: Salvar mp3 sem cobranca de serviço de voz
+        uses: actions/upload-artifact@v4
+        with:
+          name: atividade7-voz-brasileira-natural
+          path: video-atividade7/audio_natural/*.mp3
+          retention-days: 7
